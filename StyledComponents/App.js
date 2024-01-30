@@ -1,6 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
 import { useEffect, useState } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Image, ImageBackground } from 'react-native';
+
+// components
+import { Container } from './src/components/Container/Container';
+import { ButtonArea } from './src/components/Container/Container';
+import { Title } from './src/components/Title/Title';
+import { ButtonAdd } from './src/components/Button/Button';
+import { BtnIncrement } from './src/components/Image/Image';
+import { BtnDecrement } from './src/components/Image/Image';
+import { BackgroundText } from './src/components/Image/Image';
+import { Reset } from './src/components/Title/Title';
 
 export default function App() {
   useEffect(() => {
@@ -9,60 +19,47 @@ export default function App() {
 
   const [count, setCount] = useState(0);
 
-  const increment = () => { 
+  const increment = () => {
     setCount(count + 1);
   }
 
-  const decrement = () => { 
-    setCount(count - 1);
+  const decrement = () => {
+    count > 0 ?  setCount(count - 1) : setCount(0);
+    count == 0 ? alert("NÃO SE PODE SUBTRAIR 0 !!!") : null;
+  }
+
+  const reset = () => {
+    setCount(0);
   }
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Contador: {count}</Text>
- 
-      <View style={styles.buttonArea}>
-        <TouchableOpacity style={styles.button} onPress={increment}>
-          <Text style={styles.textButton1}>+</Text>
-        </TouchableOpacity>
+    <Container source={require("./assets/high-tec.jpg")}>
+      <BackgroundText source={require("./assets/balloon.png")}>
+        <Title>{count}</Title>
+      </BackgroundText>
 
-        <TouchableOpacity style={styles.button} onPress={decrement}>
-          <Text style={styles.textButton2}>-</Text>
-        </TouchableOpacity>
+
+
+      <ButtonArea>
+        <ButtonAdd onPress={decrement}>
+          <BtnDecrement
+            source={require("./assets/menos.png")}
+          />
+          {/* <Text style={styles.textButton2}> - </Text> */}
+        </ButtonAdd>
+
+
+
+        <Reset onPress={reset}>RESET</Reset>
+
+        <ButtonAdd onPress={increment}>
+          <BtnIncrement
+            source={require("./assets/mais.png")}
+          />
+          {/* <Text style={styles.textButton1}>+</Text> */}
+        </ButtonAdd>
         <StatusBar style="auto" />
-      </View>
-    </View>
+      </ButtonArea>
+    </Container>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#373434',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  button: {
-    width: 50,
-    height: 45,
-  },
-  buttonArea: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    padding: 20,
-    gap: 40,
-    width: 250
-  },
-  textButton1: {
-    fontSize: 40,
-    color: "yellowgreen"
-  },
-  textButton2: {
-    fontSize: 40,
-    color: "red",
-  },
-  text: {
-    fontSize: 50,
-    color: "white"
-  }
-});
