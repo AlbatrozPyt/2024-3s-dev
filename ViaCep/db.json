@@ -1,0 +1,12 @@
+{
+    "cep" : [
+        {
+            "id" : 1,
+            "logradouro" : "Rua dois",
+            "bairro" : "Bairro dos agiotas",
+            "localidade" : "Cidade da lua",
+            "estado" : "Rio of Janeiro",
+            "uf" : "RJ"
+         }
+    ]
+}
