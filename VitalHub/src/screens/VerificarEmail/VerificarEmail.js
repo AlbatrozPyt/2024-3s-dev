@@ -1,8 +1,10 @@
-import { ButtonIcon, ContainerButtonIcon } from "../../components/ButtonIcons/ButtonIcons"
+import { ButtonIcon, ContainerButtonIcon } from "../../components/ButtonIcons/Style"
 import { Container } from "../../components/Container/Style"
 import { Logo } from "../../components/Logo/Style"
-import { SimpleText, Title } from "../../components/Title/Style"
+import { ButtonTitle, SimpleText, Title, UserEmail } from "../../components/Title/Style"
 import { LinkAccout } from "../../components/ContextAccout/Style"
+import { BoxCodeInput, CodeInput, Input } from "../../components/Input/Style"
+import { Button } from "../../components/Button/Style"
 
 export const VerificarEmail = () => {
     return (
@@ -16,8 +18,21 @@ export const VerificarEmail = () => {
             <Title>Verifique seu e-mail</Title>
 
             <SimpleText>
-                Digite o código de 4 dígitos enviado para <LinkAccout>username@email.com</LinkAccout>
+                Digite o código de 4 dígitos enviado para <UserEmail>username@email.com</UserEmail>
             </SimpleText>
+
+            <BoxCodeInput>
+                <CodeInput placeholder={"0"} keyboardType="numeric" maxLength={1} />
+                <CodeInput placeholder={"0"} keyboardType="numeric" maxLength={1} />
+                <CodeInput placeholder={"0"} keyboardType="numeric" maxLength={1} />
+                <CodeInput placeholder={"0"} keyboardType="numeric" maxLength={1} />
+            </BoxCodeInput>
+
+            <Button>
+                <ButtonTitle>Entrar</ButtonTitle>
+            </Button>
+
+            <LinkAccout>Reenviar Código</LinkAccout>
         </Container>
     )
 }

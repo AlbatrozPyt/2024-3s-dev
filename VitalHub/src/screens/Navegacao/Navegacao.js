@@ -15,6 +15,18 @@ export const Navegacao = ({ navigation }) => {
                 title="Verificar Email"
                 onPress={() => navigation.navigate("Verificar o Email")}
             />
+            <Button
+                title="Redefinir Senha"
+                onPress={() => navigation.navigate("Redefinir Senha")}
+            />
+            <Button
+                title="Criar Conta"
+                onPress={() => navigation.navigate("Criar Conta")}
+            />
+            <Button
+                title="Consultas Medico"
+                onPress={() => navigation.navigate("ConsultasMedico")}
+            />
         </View>
     )
 }

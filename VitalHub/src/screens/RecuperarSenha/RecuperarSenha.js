@@ -1,7 +1,7 @@
 import { Text } from "react-native"
 import { Container } from "../../components/Container/Style"
 import { Logo } from "../../components/Logo/Style"
-import { ButtonIcon, ContainerButtonIcon } from "../../components/ButtonIcons/ButtonIcons"
+import { ButtonIcon, ContainerButtonIcon } from "../../components/ButtonIcons/Style"
 import { ButtonTitle, SimpleText, Title } from "../../components/Title/Style"
 import { Input } from "../../components/Input/Style"
 import { Button } from "../../components/Button/Style"

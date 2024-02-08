@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+// Link da Medium
 export const LinkMedium = styled.Text`
     font-size: 14px;
     font-family: "MontserratAlternates_500Medium";

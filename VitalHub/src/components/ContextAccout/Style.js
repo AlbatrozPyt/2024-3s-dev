@@ -12,6 +12,7 @@ export const TextAccount = styled.Text`
 `
 
 export const LinkAccout = styled(TextAccount)`
+    margin-top: 30px;
     text-decoration: underline;
     color: #4D659D;
 `
