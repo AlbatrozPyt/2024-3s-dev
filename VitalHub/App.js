@@ -62,7 +62,7 @@ export default function App() {
 
         <Stack.Screen
           name='Criar Conta'
-          component={RedefinirSenha}
+          component={CriarConta}
           options={{title: "Criar Conta"}}
         />
 
