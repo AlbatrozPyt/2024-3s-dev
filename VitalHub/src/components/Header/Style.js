@@ -23,6 +23,7 @@ export const HeaderContent = styled.View`
 export const BoxView = styled.View `
     display: flex;
     flex-direction: row;
+    align-items: center;
 `
 
 // Box title header

@@ -5,7 +5,7 @@ import { Title, ButtonTitle, ButtonTitleGoogle } from "../../components/Title/St
 import { Input } from "../../components/Input/Style"
 import { LinkMedium } from "../../components/Link/Style"
 import { Button, ButtonGoogle } from "../../components/Button/Style"
-import { ContentAccount, LinkAccout, TextAccount } from "../../components/ContextAccout/Style"
+import { ContentAccount, LinkAccount, TextAccount } from "../../components/ContextAccout/Style"
 
 export const Login = () => {
     return (
@@ -36,7 +36,7 @@ export const Login = () => {
 
 
             <ContentAccount>
-                <TextAccount>Não tem conta ? <LinkAccout> Crie uma agora!</LinkAccout></TextAccount> 
+                <TextAccount>Não tem conta ? <LinkAccount> Crie uma agora!</LinkAccount></TextAccount> 
             </ContentAccount>
         </Container>
     )

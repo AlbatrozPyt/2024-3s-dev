@@ -2,7 +2,7 @@ import { ButtonIcon, ContainerButtonIcon } from "../../components/ButtonIcons/St
 import { Container } from "../../components/Container/Style"
 import { Logo } from "../../components/Logo/Style"
 import { ButtonTitle, SimpleText, Title, UserEmail } from "../../components/Title/Style"
-import { LinkAccout } from "../../components/ContextAccout/Style"
+import { LinkAccount } from "../../components/ContextAccout/Style"
 import { BoxCodeInput, CodeInput, Input } from "../../components/Input/Style"
 import { Button } from "../../components/Button/Style"
 
@@ -32,7 +32,7 @@ export const VerificarEmail = () => {
                 <ButtonTitle>Entrar</ButtonTitle>
             </Button>
 
-            <LinkAccout>Reenviar Código</LinkAccout>
+            <LinkAccount>Reenviar Código</LinkAccount>
         </Container>
     )
 }

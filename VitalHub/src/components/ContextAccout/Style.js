@@ -11,8 +11,9 @@ export const TextAccount = styled.Text`
     font-family: "MontserratAlternates_600SemiBold";
 `
 
-export const LinkAccout = styled(TextAccount)`
+export const LinkAccount = styled(TextAccount)`
     margin-top: 30px;
     text-decoration: underline;
     color: #4D659D;
+    padding-bottom: 20px;
 `

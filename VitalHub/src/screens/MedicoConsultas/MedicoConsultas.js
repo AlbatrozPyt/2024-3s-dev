@@ -1,114 +1,237 @@
-import { StatusBar, View } from "react-native"
-import { BoxTitleHeader, BoxView, HeaderContainer, HeaderContent, Notification, SubTitleHeader, TitleHeader } from "../../components/Header/Style"
-import { LinearGradient } from "expo-linear-gradient"
-import { ImagePerfil } from "../../components/ImagePerfil/Style"
-import { BoxDay, ContainerData, ContentData, Day, DayWeek, MonthAndYear } from "../../components/ContainerData/Style"
-import { Container } from "../../components/Container/Style"
-import { BoxConsulta, BoxConsultasText, BoxSituacao, CardConsulta, CardSubTitle, CardTitle, ContainerConsultas, ContentConsultas, ContentSituacao, Horario, IconTime, ImageConsulta, TitleSituacao } from "../../components/Consultas/Style"
+import { StatusBar, View } from "react-native";
+import {
+  BoxTitleHeader,
+  BoxView,
+  HeaderContainer,
+  HeaderContent,
+  Notification,
+  SubTitleHeader,
+  TitleHeader,
+} from "../../components/Header/Style";
+import { LinearGradient } from "expo-linear-gradient";
+import { ImagePerfil } from "../../components/ImagePerfil/Style";
+import {
+  BoxDay,
+  ContainerData,
+  ContentData,
+  Day,
+  DayWeek,
+  MonthAndYear,
+} from "../../components/ContainerData/Style";
+import { Container } from "../../components/Container/Style";
+import {
+  MenuFooter,
+  ContainerFooter,
+  BoxButtonFooter,
+  TextButtonFooter,
+} from "../../components/MenuFooter/Style";
+import {
+  BoxConsultasText,
+  BoxSituacao,
+  CardConsulta,
+  CardSubTitle,
+  CardTitle,
+  ContainerConsultas,
+  ContentSituacao,
+  Horario,
+  HorarioRealizado,
+  ImageConsulta,
+  ModalButton,
+  TextCancel,
+  TitleSituacao,
+} from "../../components/Consultas/Style";
+import { AntDesign } from "@expo/vector-icons";
+import { FontAwesome6 } from "@expo/vector-icons";
 
-export const MedicoConsultas = () => {
-    return (
-        <Container>
-            <StatusBar backgroundColor={"transparent"} barStyle={"dark-content"} />
+export const MedicoConsultas = ({ navigation }) => {
+  return (
+    <Container>
+      <StatusBar backgroundColor={"transparent"} barStyle={"dark-content"} />
 
-            <HeaderContainer>
-                <LinearGradient
-                    colors={["#60BFC5", "#496BBA"]}
-                    start={{ x: 0, y: 0 }}
-                    end={{ x: 1, y: 0 }}
-                    style={{
-                        position: "absolute",
-                        zIndex: 0,
-                        width: "100%",
-                        height: "100%",
-                        borderBottomLeftRadius: 20,
-                        borderBottomRightRadius: 20,
-                    }}
-                />
-                <HeaderContent>
-                    <BoxView>
+      <HeaderContainer>
+        <LinearGradient
+          colors={["#60BFC5", "#496BBA"]}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 0 }}
+          style={{
+            position: "absolute",
+            zIndex: 0,
+            width: "100%",
+            height: "100%",
+            borderBottomLeftRadius: 20,
+            borderBottomRightRadius: 20,
+          }}
+        />
+        <HeaderContent>
+          <BoxView>
+            <ImagePerfil source={require("../../assets/ImagemPerfil.png")} />
 
-                        <ImagePerfil source={require("../../assets/ImagemPerfil.png")} />
+            <BoxTitleHeader>
+              <SubTitleHeader>Bem Vindo</SubTitleHeader>
+              <TitleHeader>Dr. Claudio</TitleHeader>
+            </BoxTitleHeader>
+          </BoxView>
 
-                        <BoxTitleHeader>
-                            <SubTitleHeader>
-                                Bem Vindo
-                            </SubTitleHeader>
-                            <TitleHeader>Dr. Claudio</TitleHeader>
-                        </BoxTitleHeader>
-                    </BoxView>
+          <Notification source={require("../../assets/Sino.png")} />
+        </HeaderContent>
+      </HeaderContainer>
 
-                    <Notification source={require("../../assets/Sino.png")} />
-                </HeaderContent>
-            </HeaderContainer>
+      <ContentData>
+        <ContainerData>
+          <MonthAndYear>Novembro 2023</MonthAndYear>
 
-            <ContentData>
-                <ContainerData>
-                    <MonthAndYear>Novembro 2023</MonthAndYear>
+          <BoxDay>
+            <DayWeek>Dom</DayWeek>
+            <Day>01</Day>
+          </BoxDay>
 
-                    <BoxDay>
-                        <DayWeek>Dom</DayWeek>
-                        <Day>01</Day>
-                    </BoxDay>
+          <BoxDay>
+            <DayWeek>Seg</DayWeek>
+            <Day>02</Day>
+          </BoxDay>
 
-                    <BoxDay>
-                        <DayWeek>Seg</DayWeek>
-                        <Day>02</Day>
-                    </BoxDay>
+          <BoxDay>
+            <DayWeek>Ter</DayWeek>
+            <Day>03</Day>
+          </BoxDay>
 
-                    <BoxDay>
-                        <DayWeek>Ter</DayWeek>
-                        <Day>03</Day>
-                    </BoxDay>
+          <BoxDay>
+            <DayWeek>Qua</DayWeek>
+            <Day>04</Day>
+          </BoxDay>
 
-                    <BoxDay>
-                        <DayWeek>Qua</DayWeek>
-                        <Day>04</Day>
-                    </BoxDay>
+          <BoxDay>
+            <DayWeek>Qui</DayWeek>
+            <Day>05</Day>
+          </BoxDay>
 
-                    <BoxDay>
-                        <DayWeek>Qui</DayWeek>
-                        <Day>05</Day>
-                    </BoxDay>
+          <BoxDay>
+            <DayWeek>Sex</DayWeek>
+            <Day>06</Day>
+          </BoxDay>
 
-                    <BoxDay>
-                        <DayWeek>Sex</DayWeek>
-                        <Day>06</Day>
-                    </BoxDay>
+          <BoxDay>
+            <DayWeek>Sab</DayWeek>
+            <Day>07</Day>
+          </BoxDay>
+        </ContainerData>
+      </ContentData>
 
-                    <BoxDay>
-                        <DayWeek>Sab</DayWeek>
-                        <Day>07</Day>
-                    </BoxDay>
-                </ContainerData>
-            </ContentData>
+      <ContentSituacao>
+        <BoxSituacao>
+          <TitleSituacao>Agendadas</TitleSituacao>
+        </BoxSituacao>
 
-            <ContentSituacao>
-                <BoxSituacao>
-                    <TitleSituacao>Agendadas</TitleSituacao>
-                </BoxSituacao>
+        <BoxSituacao>
+          <TitleSituacao>Realizadas</TitleSituacao>
+        </BoxSituacao>
 
-                <BoxSituacao>
-                    <TitleSituacao>Realizadas</TitleSituacao>
-                </BoxSituacao>
+        <BoxSituacao>
+          <TitleSituacao>Canceladas</TitleSituacao>
+        </BoxSituacao>
+      </ContentSituacao>
 
-                <BoxSituacao>
-                    <TitleSituacao>Canceladas</TitleSituacao>
-                </BoxSituacao>
-            </ContentSituacao>
+      <ContainerConsultas>
+        <CardConsulta>
+          <ImageConsulta source={require("../../assets/Nicolle.png")} />
 
-            <ContainerConsultas>
-                <CardConsulta>
-                    <ImageConsulta source={require("../../assets/Nicolle.png")}/>
+          <BoxConsultasText>
+            <CardTitle>Nicolle Sarga</CardTitle>
+            <CardSubTitle>22 Idade . Rotina</CardSubTitle>
+            <HorarioRealizado>
+              {" "}
+              <AntDesign
+                name="clockcircle"
+                size={14}
+                color="#4E4B59"
+              /> 14:00{" "}
+            </HorarioRealizado>
+          </BoxConsultasText>
 
-                    <BoxConsultasText>
-                        <CardTitle>Nicolle Sarga</CardTitle>
-                        <CardSubTitle>22 Idade . Rotina</CardSubTitle>
-                        <Horario> <IconTime source={require("../../assets/time.png")} /> 14:00 </Horario>
-                    </BoxConsultasText>
-                </CardConsulta>
-            </ContainerConsultas>
+          <ModalButton>
+            <TextCancel>Cancelar</TextCancel>
+          </ModalButton>
+        </CardConsulta>
+        <CardConsulta>
+          <ImageConsulta source={require("../../assets/Kosta.png")} />
 
-        </Container>
-    )
-}
+          <BoxConsultasText>
+            <CardTitle>Richard Kosta</CardTitle>
+            <CardSubTitle>28 Idade . Urgência</CardSubTitle>
+            <Horario>
+              {" "}
+              <AntDesign
+                name="clockcircle"
+                size={14}
+                color="#49B3BA"
+              /> 15:00{" "}
+            </Horario>
+          </BoxConsultasText>
+
+          <ModalButton>
+            <TextCancel>Cancelar</TextCancel>
+          </ModalButton>
+        </CardConsulta>
+        <CardConsulta>
+          <ImageConsulta source={require("../../assets/Nicolle.png")} />
+
+          <BoxConsultasText>
+            <CardTitle>Nicolle Sarga</CardTitle>
+            <CardSubTitle>22 Idade . Rotina</CardSubTitle>
+            <HorarioRealizado>
+              {" "}
+              <AntDesign
+                name="clockcircle"
+                size={14}
+                color="#4E4B59"
+              /> 14:00{" "}
+            </HorarioRealizado>
+          </BoxConsultasText>
+
+          <ModalButton>
+            <TextCancel>Cancelar</TextCancel>
+          </ModalButton>
+        </CardConsulta>
+        <CardConsulta>
+          <ImageConsulta source={require("../../assets/Kosta.png")} />
+
+          <BoxConsultasText>
+            <CardTitle>Richard Kosta</CardTitle>
+            <CardSubTitle>28 Idade . Urgência</CardSubTitle>
+            <Horario>
+              {" "}
+              <AntDesign
+                name="clockcircle"
+                size={14}
+                color="#49B3BA"
+              /> 15:00{" "}
+            </Horario>
+          </BoxConsultasText>
+
+          <ModalButton>
+            <TextCancel>Cancelar</TextCancel>
+          </ModalButton>
+        </CardConsulta>
+      </ContainerConsultas>
+
+      <MenuFooter>
+        <ContainerFooter>
+          <BoxButtonFooter>
+            <FontAwesome6 name="calendar-check" size={18} color="#4E4B59" />
+            <TextButtonFooter>Agenda</TextButtonFooter>
+          </BoxButtonFooter>
+
+          <BoxButtonFooter>
+            <FontAwesome6 name="hospital" size={18} color="#4E4B59" />
+            <TextButtonFooter>Clínicas</TextButtonFooter>
+          </BoxButtonFooter>
+
+          <BoxButtonFooter>
+            <FontAwesome6 name="user-large" size={18} color="#4E4B59" />
+            <TextButtonFooter>Perfil</TextButtonFooter>
+          </BoxButtonFooter>
+        </ContainerFooter>
+      </MenuFooter>
+    </Container>
+  );
+};

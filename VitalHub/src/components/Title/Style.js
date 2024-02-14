@@ -4,6 +4,7 @@ import styled from "styled-components";
 export const Title = styled.Text `
     font-size: 20px;
     font-family: "MontserratAlternates_600SemiBold";
+    margin-top: 30px;
 `
 
 // Texto Padrao
@@ -34,3 +35,9 @@ export const ButtonTitleGoogle = styled(ButtonTitle)`
 export const UserEmail = styled( SimpleText )`
     color: #496BBA;
 `
+
+// Label
+export const Label = styled(SimpleText)`
+    text-align: left;
+`
+

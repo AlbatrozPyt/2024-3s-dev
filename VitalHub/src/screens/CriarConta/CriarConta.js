@@ -3,6 +3,7 @@ import { Container } from "../../components/Container/Style"
 import { Input } from "../../components/Input/Style"
 import { Logo } from "../../components/Logo/Style"
 import { ButtonTitle, SimpleText, Title } from "../../components/Title/Style"
+import { LinkAccount } from "../../components/ContextAccout/Style"
 
 export const CriarConta = () => {
     return (
@@ -22,6 +23,8 @@ export const CriarConta = () => {
             <Button>
                 <ButtonTitle>Cadastrar</ButtonTitle>
             </Button>
+
+            <LinkAccount>Cancelar</LinkAccount>
         </Container>
     )
 }
