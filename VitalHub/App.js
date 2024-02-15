@@ -27,6 +27,7 @@ import {
 } from "./src/screens/ProntuarioMedico/ProntuarioMedico.js";
 import { PacienteConsulta } from "./src/screens/PacienteConsulta/PacienteConsulta.js";
 import { Perfil } from "./src/screens/Perfil/Perfil.js";
+import { SelecionarClinica } from "./src/screens/SelecionarClinica/SelecionarClinica.js";
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -118,9 +119,9 @@ export default function App() {
         />
 
         <Stack.Screen
-          name="ModalConsulta"
-          component={ModalConsulta}
-          options={{ title: "ModalConsulta" }}
+          name="SelecionarClinica"
+          component={SelecionarClinica}
+          options={{ title: "SelecionarClinica" }}
         />
       </Stack.Navigator>
     </NavigationContainer>

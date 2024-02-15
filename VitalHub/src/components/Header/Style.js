@@ -4,7 +4,7 @@ import styled from "styled-components";
 // Container do Header
 export const HeaderContainer = styled.SafeAreaView`
     width: 100%;
-    height: 144px;
+    height: 102px;
     position: relative;
     top: 0;
     border-radius: 0 0 20px 20px;

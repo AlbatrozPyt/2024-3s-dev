@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { BoxTitleHeader } from "../Header/Style";
 
 export const Container = styled.SafeAreaView`
   flex: 1;
@@ -9,6 +10,7 @@ export const Container = styled.SafeAreaView`
 export const ContainerScroll = styled.ScrollView`
   height: 100%;
   width: 100%;
+  background-color: #fafafa;
 `;
 
 // Container input prontuario
@@ -52,4 +54,15 @@ export const ContainerInput = styled(ContainerInputProntuario)`
 export const ContainerMultiInput = styled(ContainerCheck)`
   justify-content: space-between;
   align-self: center;
+`
+// Container da dos card selecionar clinica
+export const ContainerSelecionarClinica = styled(ContainerScroll)`
+  width: 100%;;
+  padding-left: 10%;
+`
+
+// Box do card selecionar clinica
+export const BoxInverse = styled(BoxTitleHeader)`
+  align-items: end;
+  padding: 0;
 `

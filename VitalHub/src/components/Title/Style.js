@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { CardSubTitle } from "../Consultas/Style";
 
 // Titulo principal
 export const Title = styled.Text `
@@ -41,3 +42,7 @@ export const Label = styled(SimpleText)`
     text-align: left;
 `
 
+// Texto da nota da clinica
+export const TextNote = styled(CardSubTitle)`
+    color: #F9A620;
+`
