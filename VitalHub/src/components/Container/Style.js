@@ -57,8 +57,19 @@ export const ContainerMultiInput = styled(ContainerCheck)`
 `
 // Container da dos card selecionar clinica
 export const ContainerSelecionarClinica = styled(ContainerScroll)`
-  width: 100%;;
-  padding-left: 10%;
+  width: 90%;
+`
+// Container de dentro do scroll
+export const ContainerInternoScroll = styled.View`
+  width: 100%;
+  align-items: center;
+`
+
+export const ContainerTopicoAgendamento = styled(Container)`
+  align-items: start;
+  width: 90%;
+  height: 100%;
+  background-color: blue;
 `
 
 // Box do card selecionar clinica

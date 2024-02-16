@@ -17,6 +17,12 @@ export const SimpleText = styled.Text`
     margin-top: 15px;
 `
 
+// Texto Padrao SemiBold
+export const TextSemiBold = styled(SimpleText)`
+    font-family: "Quicksand_600SemiBold";
+    text-align: left;
+`
+
 // Texto do botao padrao
 export const ButtonTitle = styled.Text`
     font-size: 14px;

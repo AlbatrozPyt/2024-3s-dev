@@ -48,3 +48,10 @@ export const TextAgendar= styled(TextModalProntuario)`
     width: 90%;
     text-align: left;
 `
+
+// Modal Agendamento
+export const BoxModalAgendamento = styled(BoxModalProntuario)`
+    height: 554px;
+    z-index: 0;
+    background-color: red;
+`

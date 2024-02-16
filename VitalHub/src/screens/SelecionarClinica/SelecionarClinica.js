@@ -1,6 +1,6 @@
 import { CardClinica, HorarioAtendimento } from "../../components/Cards/Style"
 import { CardTitle } from "../../components/Consultas/Style"
-import { BoxInverse, Container, ContainerScroll, ContainerSelecionarClinica } from "../../components/Container/Style"
+import { BoxInverse, Container, ContainerInternoScroll, ContainerScroll, ContainerSelecionarClinica } from "../../components/Container/Style"
 import { BoxTitleHeader, SubTitleHeader } from "../../components/Header/Style"
 import { ButtonTitle, TextNote, Title } from "../../components/Title/Style";
 import { Button } from "../../components/Button/Style";
@@ -16,138 +16,139 @@ export const SelecionarClinica = () => {
 
 
             <ContainerSelecionarClinica>
-                <Title>Selecionar Clinica</Title>
+                <ContainerInternoScroll>
+                    <Title>Selecionar Clinica</Title>
 
-                <CardClinica>
-                    <BoxTitleHeader>
-                        <CardTitle>Clínica Natureh</CardTitle>
+                    <CardClinica>
+                        <BoxTitleHeader>
+                            <CardTitle>Clínica Natureh</CardTitle>
 
-                        <SubTitleHeader>São Paulo, SP</SubTitleHeader>
-                    </BoxTitleHeader>
+                            <SubTitleHeader>São Paulo, SP</SubTitleHeader>
+                        </BoxTitleHeader>
 
-                    <BoxInverse>
-                        <TextNote> <AntDesign name="star" size={24} color="#F9A620" /> 4,5</TextNote>
+                        <BoxInverse>
+                            <TextNote> <AntDesign name="star" size={24} color="#F9A620" /> 4,5</TextNote>
 
-                        <HorarioAtendimento>
-                            <MaterialCommunityIcons name="calendar-outline" size={14} color="#49b3ba" /> Seg-Sex
-                        </HorarioAtendimento>
-                    </BoxInverse>
-                </CardClinica>
+                            <HorarioAtendimento>
+                                <MaterialCommunityIcons name="calendar-outline" size={14} color="#49b3ba" /> Seg-Sex
+                            </HorarioAtendimento>
+                        </BoxInverse>
+                    </CardClinica>
 
-                <CardClinica>
-                    <BoxTitleHeader>
-                        <CardTitle>Diamond Pró-Mulher</CardTitle>
+                    <CardClinica>
+                        <BoxTitleHeader>
+                            <CardTitle>Diamond Pró-Mulher</CardTitle>
 
-                        <SubTitleHeader>São Paulo, SP</SubTitleHeader>
-                    </BoxTitleHeader>
+                            <SubTitleHeader>São Paulo, SP</SubTitleHeader>
+                        </BoxTitleHeader>
 
-                    <BoxInverse>
-                        <TextNote> <AntDesign name="star" size={24} color="#F9A620" /> 4,8</TextNote>
+                        <BoxInverse>
+                            <TextNote> <AntDesign name="star" size={24} color="#F9A620" /> 4,8</TextNote>
 
-                        <HorarioAtendimento>
-                            <MaterialCommunityIcons name="calendar-outline" size={14} color="#49b3ba" /> Seg-Sex
-                        </HorarioAtendimento>
-                    </BoxInverse>
-                </CardClinica>
+                            <HorarioAtendimento>
+                                <MaterialCommunityIcons name="calendar-outline" size={14} color="#49b3ba" /> Seg-Sex
+                            </HorarioAtendimento>
+                        </BoxInverse>
+                    </CardClinica>
 
-                <CardClinica>
-                    <BoxTitleHeader>
-                        <CardTitle>Clinica Villa Lobos</CardTitle>
+                    <CardClinica>
+                        <BoxTitleHeader>
+                            <CardTitle>Clinica Villa Lobos</CardTitle>
 
-                        <SubTitleHeader>São Paulo, SP</SubTitleHeader>
-                    </BoxTitleHeader>
+                            <SubTitleHeader>São Paulo, SP</SubTitleHeader>
+                        </BoxTitleHeader>
 
-                    <BoxInverse>
-                        <TextNote> <AntDesign name="star" size={24} color="#F9A620" /> 4,2</TextNote>
+                        <BoxInverse>
+                            <TextNote> <AntDesign name="star" size={24} color="#F9A620" /> 4,2</TextNote>
 
-                        <HorarioAtendimento>
-                            <MaterialCommunityIcons name="calendar-outline" size={14} color="#49b3ba" /> Seg-Sex
-                        </HorarioAtendimento>
-                    </BoxInverse>
-                </CardClinica>
+                            <HorarioAtendimento>
+                                <MaterialCommunityIcons name="calendar-outline" size={14} color="#49b3ba" /> Seg-Sex
+                            </HorarioAtendimento>
+                        </BoxInverse>
+                    </CardClinica>
 
-                <CardClinica>
-                    <BoxTitleHeader>
-                        <CardTitle>SP Oncologia Clínica</CardTitle>
+                    <CardClinica>
+                        <BoxTitleHeader>
+                            <CardTitle>SP Oncologia Clínica</CardTitle>
 
-                        <SubTitleHeader>Taboão, SP</SubTitleHeader>
-                    </BoxTitleHeader>
+                            <SubTitleHeader>Taboão, SP</SubTitleHeader>
+                        </BoxTitleHeader>
 
-                    <BoxInverse>
-                        <TextNote> <AntDesign name="star" size={24} color="#F9A620" /> 4,2</TextNote>
+                        <BoxInverse>
+                            <TextNote> <AntDesign name="star" size={24} color="#F9A620" /> 4,2</TextNote>
 
-                        <HorarioAtendimento>
-                            <MaterialCommunityIcons name="calendar-outline" size={14} color="#49b3ba" /> Seg-Sex
-                        </HorarioAtendimento>
-                    </BoxInverse>
-                </CardClinica>
-
-
-                <CardClinica>
-                    <BoxTitleHeader>
-                        <CardTitle>Clínica Natureh</CardTitle>
-
-                        <SubTitleHeader>São Paulo, SP</SubTitleHeader>
-                    </BoxTitleHeader>
-
-                    <BoxInverse>
-                        <TextNote> <AntDesign name="star" size={24} color="#F9A620" /> 4,5</TextNote>
-
-                        <HorarioAtendimento>
-                            <MaterialCommunityIcons name="calendar-outline" size={14} color="#49b3ba" /> Seg-Sex
-                        </HorarioAtendimento>
-                    </BoxInverse>
-                </CardClinica>
-
-                <CardClinica>
-                    <BoxTitleHeader>
-                        <CardTitle>Diamond Pró-Mulher</CardTitle>
-
-                        <SubTitleHeader>São Paulo, SP</SubTitleHeader>
-                    </BoxTitleHeader>
-
-                    <BoxInverse>
-                        <TextNote> <AntDesign name="star" size={24} color="#F9A620" /> 4,8</TextNote>
-
-                        <HorarioAtendimento>
-                            <MaterialCommunityIcons name="calendar-outline" size={14} color="#49b3ba" /> Seg-Sex
-                        </HorarioAtendimento>
-                    </BoxInverse>
-                </CardClinica>
-
-                <CardClinica>
-                    <BoxTitleHeader>
-                        <CardTitle>Clinica Villa Lobos</CardTitle>
-
-                        <SubTitleHeader>São Paulo, SP</SubTitleHeader>
-                    </BoxTitleHeader>
-
-                    <BoxInverse>
-                        <TextNote> <AntDesign name="star" size={24} color="#F9A620" /> 4,2</TextNote>
-
-                        <HorarioAtendimento>
-                            <MaterialCommunityIcons name="calendar-outline" size={14} color="#49b3ba" /> Seg-Sex
-                        </HorarioAtendimento>
-                    </BoxInverse>
-                </CardClinica>
-
-                <CardClinica>
-                    <BoxTitleHeader>
-                        <CardTitle>SP Oncologia Clínica</CardTitle>
-
-                        <SubTitleHeader>Taboão, SP</SubTitleHeader>
-                    </BoxTitleHeader>
-
-                    <BoxInverse>
-                        <TextNote> <AntDesign name="star" size={24} color="#F9A620" /> 4,2</TextNote>
-
-                        <HorarioAtendimento>
-                            <MaterialCommunityIcons name="calendar-outline" size={14} color="#49b3ba" /> Seg-Sex
-                        </HorarioAtendimento>
-                    </BoxInverse>
-                </CardClinica>
+                            <HorarioAtendimento>
+                                <MaterialCommunityIcons name="calendar-outline" size={14} color="#49b3ba" /> Seg-Sex
+                            </HorarioAtendimento>
+                        </BoxInverse>
+                    </CardClinica>
 
 
+                    <CardClinica>
+                        <BoxTitleHeader>
+                            <CardTitle>Clínica Natureh</CardTitle>
+
+                            <SubTitleHeader>São Paulo, SP</SubTitleHeader>
+                        </BoxTitleHeader>
+
+                        <BoxInverse>
+                            <TextNote> <AntDesign name="star" size={24} color="#F9A620" /> 4,5</TextNote>
+
+                            <HorarioAtendimento>
+                                <MaterialCommunityIcons name="calendar-outline" size={14} color="#49b3ba" /> Seg-Sex
+                            </HorarioAtendimento>
+                        </BoxInverse>
+                    </CardClinica>
+
+                    <CardClinica>
+                        <BoxTitleHeader>
+                            <CardTitle>Diamond Pró-Mulher</CardTitle>
+
+                            <SubTitleHeader>São Paulo, SP</SubTitleHeader>
+                        </BoxTitleHeader>
+
+                        <BoxInverse>
+                            <TextNote> <AntDesign name="star" size={24} color="#F9A620" /> 4,8</TextNote>
+
+                            <HorarioAtendimento>
+                                <MaterialCommunityIcons name="calendar-outline" size={14} color="#49b3ba" /> Seg-Sex
+                            </HorarioAtendimento>
+                        </BoxInverse>
+                    </CardClinica>
+
+                    <CardClinica>
+                        <BoxTitleHeader>
+                            <CardTitle>Clinica Villa Lobos</CardTitle>
+
+                            <SubTitleHeader>São Paulo, SP</SubTitleHeader>
+                        </BoxTitleHeader>
+
+                        <BoxInverse>
+                            <TextNote> <AntDesign name="star" size={24} color="#F9A620" /> 4,2</TextNote>
+
+                            <HorarioAtendimento>
+                                <MaterialCommunityIcons name="calendar-outline" size={14} color="#49b3ba" /> Seg-Sex
+                            </HorarioAtendimento>
+                        </BoxInverse>
+                    </CardClinica>
+
+                    <CardClinica>
+                        <BoxTitleHeader>
+                            <CardTitle>SP Oncologia Clínica</CardTitle>
+
+                            <SubTitleHeader>Taboão, SP</SubTitleHeader>
+                        </BoxTitleHeader>
+
+                        <BoxInverse>
+                            <TextNote> <AntDesign name="star" size={24} color="#F9A620" /> 4,2</TextNote>
+
+                            <HorarioAtendimento>
+                                <MaterialCommunityIcons name="calendar-outline" size={14} color="#49b3ba" /> Seg-Sex
+                            </HorarioAtendimento>
+                        </BoxInverse>
+                    </CardClinica>
+
+                </ContainerInternoScroll>
 
             </ContainerSelecionarClinica>
 

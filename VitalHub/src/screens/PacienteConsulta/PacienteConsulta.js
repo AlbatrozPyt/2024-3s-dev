@@ -12,14 +12,6 @@ import {
 } from "../../components/Header/Style";
 import { ImagePerfil } from "../../components/ImagePerfil/Style";
 import {
-  BoxDay,
-  ContainerData,
-  ContentData,
-  Day,
-  DayWeek,
-  MonthAndYear,
-} from "../../components/ContainerData/Style";
-import {
   BoxConsultasText,
   BoxSituacao,
   CardConsulta,
@@ -28,7 +20,6 @@ import {
   ContainerConsultas,
   ContentSituacao,
   Horario,
-  HorarioRealizado,
   ImageConsulta,
   ModalButton,
   TextCancel,
@@ -37,12 +28,13 @@ import {
 import { AntDesign } from "@expo/vector-icons";
 import { FontAwesome6 } from "@expo/vector-icons";
 import { ButtonAgendar, ContainerButtonAgendar } from "../../components/ButtonIcons/Style";
-import { ModalAgendarConsulta, ModalCancelar } from "../../components/Modals/Index";
+import { ModalCancelar } from "../../components/Modals/Index";
 import { useState } from "react";
+import { Calendar } from "../../components/Calendar/Index";
 
 
 export const PacienteConsulta = () => {
-    const [showCancelar, setShowCancelar] = useState(false);
+  const [showCancelar, setShowCancelar] = useState(false);
 
   return (
     <Container>
@@ -76,46 +68,7 @@ export const PacienteConsulta = () => {
         </HeaderContent>
       </HeaderContainer>
 
-      <ContentData>
-        <ContainerData>
-          <MonthAndYear>Novembro 2023</MonthAndYear>
-
-          <BoxDay>
-            <DayWeek>Dom</DayWeek>
-            <Day>01</Day>
-          </BoxDay>
-
-          <BoxDay>
-            <DayWeek>Seg</DayWeek>
-            <Day>02</Day>
-          </BoxDay>
-
-          <BoxDay>
-            <DayWeek>Ter</DayWeek>
-            <Day>03</Day>
-          </BoxDay>
-
-          <BoxDay>
-            <DayWeek>Qua</DayWeek>
-            <Day>04</Day>
-          </BoxDay>
-
-          <BoxDay>
-            <DayWeek>Qui</DayWeek>
-            <Day>05</Day>
-          </BoxDay>
-
-          <BoxDay>
-            <DayWeek>Sex</DayWeek>
-            <Day>06</Day>
-          </BoxDay>
-
-          <BoxDay>
-            <DayWeek>Sab</DayWeek>
-            <Day>07</Day>
-          </BoxDay>
-        </ContainerData>
-      </ContentData>
+      <Calendar />
 
       <ContentSituacao>
         <BoxSituacao>
@@ -137,7 +90,7 @@ export const PacienteConsulta = () => {
 
           <BoxConsultasText>
             <CardTitle>Dr. Claudio</CardTitle>
-            <CardSubTitle>22 anos . Rotina</CardSubTitle>
+            <CardSubTitle>22 anos · Rotina</CardSubTitle>
             <Horario>
               <AntDesign
                 name="clockcircle"
@@ -148,7 +101,7 @@ export const PacienteConsulta = () => {
           </BoxConsultasText>
 
           <ModalButton
-            onPress={() => {setShowCancelar(true)}}
+            onPress={() => { setShowCancelar(true) }}
           >
             <TextCancel>Cancelar</TextCancel>
           </ModalButton>
@@ -159,7 +112,7 @@ export const PacienteConsulta = () => {
         <ButtonAgendar source={require("../../assets/Agendar.png")} />
       </ContainerButtonAgendar>
 
-      {showCancelar ? (<ModalCancelar/>) : null}
+      {showCancelar ? (<ModalCancelar />) : null}
     </Container>
   );
 };

@@ -29,7 +29,6 @@ export const BoxView = styled.View `
 // Box title header
 export const BoxTitleHeader = styled.View`
     display: flex;
-    flex-direction: column;
     padding: 15px;
 `
 

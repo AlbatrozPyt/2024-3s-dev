@@ -1,7 +1,8 @@
-import { ButtonTitle, SimpleText, Title } from "../Title/Style";
+import { ButtonTitle, SimpleText, TextSemiBold, Title } from "../Title/Style";
 import { Button } from "../Button/Style";
 import { CheckBox, Input } from "../Input/Style";
 import {
+  BoxModalAgendamento,
   BoxModalAgendar,
   BoxModalCancelar,
   BoxModalProntuario,
@@ -11,8 +12,10 @@ import {
   TextModalProntuario,
 } from "./Style";
 import { LinkAccount } from "../ContextAccout/Style";
-import { ContainerCheck, ContainerInputProntuario } from "../Container/Style";
+import { Container, ContainerCheck, ContainerInputProntuario, ContainerTopicoAgendamento } from "../Container/Style";
 import { TextInput } from "react-native";
+import { BoxConsultasText } from "../Consultas/Style";
+import { BoxTitleHeader, SubTitleHeader } from "../Header/Style";
 
 // Modal de cancelamento
 export const ModalCancelar = () => {
@@ -103,9 +106,53 @@ export const ModalConsulta = () => {
         <ImagePaciente source={require("../../assets/ClaudioLarge.png")} />
 
         <Title>Dr. Claudio</Title>
-        
+
         <TextModalProntuario>Cliníco geral  CRM-15286</TextModalProntuario>
       </BoxModalProntuario>
     </ModalBackground>
   );
 };
+
+export const ModalAgendamento = () => {
+  return (
+    <ModalBackground>
+      <BoxModalAgendamento>
+        <Title>Agendar consulta</Title>
+
+        <SimpleText>
+          Consulte os dados selecionados para a sua consulta
+        </SimpleText>
+
+
+        <ContainerTopicoAgendamento>
+          <BoxTitleHeader>
+            <TextSemiBold>Data da consulta</TextSemiBold>
+            <SubTitleHeader>1 de Novembro de 2023</SubTitleHeader>
+          </BoxTitleHeader>
+
+          <BoxTitleHeader>
+            <TextSemiBold>Médico(a) da consulta</TextSemiBold>
+            <SubTitleHeader>Dra Alessandra</SubTitleHeader>
+            <SubTitleHeader>Demartologa, Esteticista</SubTitleHeader>
+          </BoxTitleHeader>
+
+          <BoxTitleHeader>
+            <TextSemiBold>Local da consulta</TextSemiBold>
+            <SubTitleHeader>São Paulo, SP</SubTitleHeader>
+          </BoxTitleHeader>
+
+          <BoxTitleHeader>
+            <TextSemiBold>Tipo da consulta</TextSemiBold>
+            <SubTitleHeader>Rotina</SubTitleHeader>
+          </BoxTitleHeader>
+        </ContainerTopicoAgendamento>
+
+        <Button>
+          <ButtonTitle>confirmar</ButtonTitle>
+        </Button>
+
+        <LinkAccount>cancelar</LinkAccount>
+      </BoxModalAgendamento>
+    </ModalBackground>
+  )
+}

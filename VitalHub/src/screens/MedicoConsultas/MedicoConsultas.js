@@ -10,14 +10,6 @@ import {
 } from "../../components/Header/Style";
 import { LinearGradient } from "expo-linear-gradient";
 import { ImagePerfil } from "../../components/ImagePerfil/Style";
-import {
-  BoxDay,
-  ContainerData,
-  ContentData,
-  Day,
-  DayWeek,
-  MonthAndYear,
-} from "../../components/ContainerData/Style";
 import { Container } from "../../components/Container/Style";
 import {
   MenuFooter,
@@ -42,6 +34,7 @@ import {
 } from "../../components/Consultas/Style";
 import { AntDesign } from "@expo/vector-icons";
 import { FontAwesome6 } from "@expo/vector-icons";
+import { Calendar } from "../../components/Calendar/Index";
 
 export const MedicoConsultas = ({ navigation }) => {
   return (
@@ -76,46 +69,7 @@ export const MedicoConsultas = ({ navigation }) => {
         </HeaderContent>
       </HeaderContainer>
 
-      <ContentData>
-        <ContainerData>
-          <MonthAndYear>Novembro 2023</MonthAndYear>
-
-          <BoxDay>
-            <DayWeek>Dom</DayWeek>
-            <Day>01</Day>
-          </BoxDay>
-
-          <BoxDay>
-            <DayWeek>Seg</DayWeek>
-            <Day>02</Day>
-          </BoxDay>
-
-          <BoxDay>
-            <DayWeek>Ter</DayWeek>
-            <Day>03</Day>
-          </BoxDay>
-
-          <BoxDay>
-            <DayWeek>Qua</DayWeek>
-            <Day>04</Day>
-          </BoxDay>
-
-          <BoxDay>
-            <DayWeek>Qui</DayWeek>
-            <Day>05</Day>
-          </BoxDay>
-
-          <BoxDay>
-            <DayWeek>Sex</DayWeek>
-            <Day>06</Day>
-          </BoxDay>
-
-          <BoxDay>
-            <DayWeek>Sab</DayWeek>
-            <Day>07</Day>
-          </BoxDay>
-        </ContainerData>
-      </ContentData>
+      <Calendar/>
 
       <ContentSituacao>
         <BoxSituacao>
@@ -137,7 +91,7 @@ export const MedicoConsultas = ({ navigation }) => {
 
           <BoxConsultasText>
             <CardTitle>Nicolle Sarga</CardTitle>
-            <CardSubTitle>22 Idade . Rotina</CardSubTitle>
+            <CardSubTitle>22 Idade · Rotina</CardSubTitle>
             <HorarioRealizado>
               {" "}
               <AntDesign
@@ -157,7 +111,7 @@ export const MedicoConsultas = ({ navigation }) => {
 
           <BoxConsultasText>
             <CardTitle>Richard Kosta</CardTitle>
-            <CardSubTitle>28 Idade . Urgência</CardSubTitle>
+            <CardSubTitle>28 Idade · Urgência</CardSubTitle>
             <Horario>
               {" "}
               <AntDesign
@@ -197,7 +151,7 @@ export const MedicoConsultas = ({ navigation }) => {
 
           <BoxConsultasText>
             <CardTitle>Richard Kosta</CardTitle>
-            <CardSubTitle>28 Idade . Urgência</CardSubTitle>
+            <CardSubTitle>28 Idade · Urgência</CardSubTitle>
             <Horario>
               {" "}
               <AntDesign

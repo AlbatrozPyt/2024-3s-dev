@@ -17,6 +17,7 @@ import { RedefinirSenha } from "./src/screens/RedefinirSenha/RedefinirSenha";
 import { CriarConta } from "./src/screens/CriarConta/CriarConta";
 import { MedicoConsultas } from "./src/screens/MedicoConsultas/MedicoConsultas";
 import {
+  ModalAgendamento,
   ModalCancelar,
   ModalConsulta,
   ModalProntuario,
@@ -28,6 +29,7 @@ import {
 import { PacienteConsulta } from "./src/screens/PacienteConsulta/PacienteConsulta.js";
 import { Perfil } from "./src/screens/Perfil/Perfil.js";
 import { SelecionarClinica } from "./src/screens/SelecionarClinica/SelecionarClinica.js";
+import { SelecionarMedico } from "./src/screens/SelecionarMedico/SelecionarMedico.js";
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -95,9 +97,9 @@ export default function App() {
         />
 
         <Stack.Screen
-          name="Modal Prontuario"
-          component={ModalProntuario}
-          options={{ title: "Modal Prontuario" }}
+          name="Modal Agendamento"
+          component={ModalAgendamento}
+          options={{ title: "Modal Agendamento" }}
         />
 
         <Stack.Screen
@@ -122,6 +124,12 @@ export default function App() {
           name="SelecionarClinica"
           component={SelecionarClinica}
           options={{ title: "SelecionarClinica" }}
+        />
+        
+        <Stack.Screen
+          name="SelecionarMedico"
+          component={SelecionarMedico}
+          options={{ title: "SelecionarMedico" }}
         />
       </Stack.Navigator>
     </NavigationContainer>

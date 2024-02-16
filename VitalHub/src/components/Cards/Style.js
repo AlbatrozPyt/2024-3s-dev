@@ -15,6 +15,7 @@ export const CardClinica = styled.View.attrs({
     align-items: center;
     justify-content: space-evenly;
     margin-top: 12px;
+    margin-bottom: 10px;
 `
 
 // HorarioAtendimento 
