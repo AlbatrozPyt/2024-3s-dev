@@ -6,6 +6,7 @@ import {
   BoxModalAgendar,
   BoxModalCancelar,
   BoxModalProntuario,
+  DadosAgedamento,
   ImagePaciente,
   ModalBackground,
   TextAgendar,
@@ -125,27 +126,28 @@ export const ModalAgendamento = () => {
 
 
         <ContainerTopicoAgendamento>
-          <BoxTitleHeader>
+          <DadosAgedamento>
             <TextSemiBold>Data da consulta</TextSemiBold>
             <SubTitleHeader>1 de Novembro de 2023</SubTitleHeader>
-          </BoxTitleHeader>
+          </DadosAgedamento>
 
-          <BoxTitleHeader>
+          <DadosAgedamento>
             <TextSemiBold>Médico(a) da consulta</TextSemiBold>
             <SubTitleHeader>Dra Alessandra</SubTitleHeader>
             <SubTitleHeader>Demartologa, Esteticista</SubTitleHeader>
-          </BoxTitleHeader>
+          </DadosAgedamento>
 
-          <BoxTitleHeader>
+          <DadosAgedamento>
             <TextSemiBold>Local da consulta</TextSemiBold>
             <SubTitleHeader>São Paulo, SP</SubTitleHeader>
-          </BoxTitleHeader>
+          </DadosAgedamento>
 
-          <BoxTitleHeader>
+          <DadosAgedamento>
             <TextSemiBold>Tipo da consulta</TextSemiBold>
             <SubTitleHeader>Rotina</SubTitleHeader>
-          </BoxTitleHeader>
+          </DadosAgedamento>
         </ContainerTopicoAgendamento>
+
 
         <Button>
           <ButtonTitle>confirmar</ButtonTitle>
@@ -153,6 +155,7 @@ export const ModalAgendamento = () => {
 
         <LinkAccount>cancelar</LinkAccount>
       </BoxModalAgendamento>
+
     </ModalBackground>
   )
 }

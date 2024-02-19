@@ -28,7 +28,7 @@ export const BoxView = styled.View `
 
 // Box title header
 export const BoxTitleHeader = styled.View`
-    display: flex;
+    /* display: flex; */
     padding: 15px;
 `
 

@@ -53,5 +53,11 @@ export const TextAgendar= styled(TextModalProntuario)`
 export const BoxModalAgendamento = styled(BoxModalProntuario)`
     height: 554px;
     z-index: 0;
-    background-color: red;
+    `
+
+// Modal de dados do agendamento
+// Box Dados do agendamento
+export const DadosAgedamento = styled.View`
+  padding: 5px;
+  height: fit-content;
 `

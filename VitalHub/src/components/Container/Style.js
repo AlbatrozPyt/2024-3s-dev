@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { BoxTitleHeader } from "../Header/Style";
+import { BoxTitleHeader, SubTitleHeader } from "../Header/Style";
 
 export const Container = styled.SafeAreaView`
   flex: 1;
@@ -65,11 +65,10 @@ export const ContainerInternoScroll = styled.View`
   align-items: center;
 `
 
-export const ContainerTopicoAgendamento = styled(Container)`
+export const ContainerTopicoAgendamento = styled.View`
   align-items: start;
   width: 90%;
-  height: 100%;
-  background-color: blue;
+  height: fit-content;
 `
 
 // Box do card selecionar clinica

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 // Situacao da consulta: agendada, realizada ou cancelada
 
@@ -12,20 +12,34 @@ export const ContentSituacao = styled.View`
   justify-content: space-between;
 `;
 // Botão da situação
-export const BoxSituacao = styled.TouchableOpacity`
+export const BoxSituacao = styled.TouchableHighlight.attrs({
+  underlayColor: "transparent"
+})`
   width: 100px;
   height: 35px;
   border: 2px solid #496bba;
   border-radius: 5px;
+
+  /* validacao do botao */
+  ${props => props.clickButton
+    ? css`background-color: #496BBA;`
+    : css`background-color: #fff;`
+  }
 `;
 
 // Texto do botão
 export const TitleSituacao = styled.Text`
   font-size: 12px;
   font-family: "MontserratAlternates_600SemiBold";
-  color: #496bba;
   text-align: center;
   padding: 5px;
+
+  
+  /* validacao do botao */
+  ${props => props.clickButton
+    ? css`color: #fff;`
+    : css`color: #496bba;`
+  }
 `;
 
 // Consultas
@@ -38,12 +52,12 @@ export const ContainerConsultas = styled.ScrollView`
 `;
 
 // Card da consulta
-export const CardConsulta = styled.View.attrs({  
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.5,
-    shadowRadius: 2,
-    elevation: 3,
+export const CardConsulta = styled.View.attrs({
+  shadowColor: '#000',
+  shadowOffset: { width: 0, height: 2 },
+  shadowOpacity: 0.5,
+  shadowRadius: 2,
+  elevation: 3,
 })`
     width: 100%;
     height: 102px;
@@ -54,7 +68,7 @@ export const CardConsulta = styled.View.attrs({
     align-items: center;
     justify-content: space-evenly;
     margin-top: 12px;
-    margin-bottom: 5px
+    margin-bottom: 5px;
 `;
 
 // Imagem do usuario no card

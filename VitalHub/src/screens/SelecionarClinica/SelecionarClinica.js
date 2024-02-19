@@ -13,8 +13,6 @@ export const SelecionarClinica = () => {
 
 
         <Container>
-
-
             <ContainerSelecionarClinica>
                 <ContainerInternoScroll>
                     <Title>Selecionar Clinica</Title>

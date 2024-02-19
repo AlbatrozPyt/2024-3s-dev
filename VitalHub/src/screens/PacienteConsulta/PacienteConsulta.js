@@ -31,6 +31,9 @@ import { ButtonAgendar, ContainerButtonAgendar } from "../../components/ButtonIc
 import { ModalCancelar } from "../../components/Modals/Index";
 import { useState } from "react";
 import { Calendar } from "../../components/Calendar/Index";
+import { Situacao } from "../../components/Consultas/Index"
+import { Header } from "../../components/Header/Index";
+import { Cards } from "../../components/Cards/Index";
 
 
 export const PacienteConsulta = () => {
@@ -40,73 +43,13 @@ export const PacienteConsulta = () => {
     <Container>
       <StatusBar backgroundColor={"transparent"} barStyle={"dark-content"} />
 
-      <HeaderContainer>
-        <LinearGradient
-          colors={["#60BFC5", "#496BBA"]}
-          start={{ x: 0, y: 0 }}
-          end={{ x: 1, y: 0 }}
-          style={{
-            position: "absolute",
-            zIndex: 0,
-            width: "100%",
-            height: "100%",
-            borderBottomLeftRadius: 20,
-            borderBottomRightRadius: 20,
-          }}
-        />
-        <HeaderContent>
-          <BoxView>
-            <ImagePerfil source={require("../../assets/MiniKosta.png")} />
-
-            <BoxTitleHeader>
-              <SubTitleHeader>Bem Vindo</SubTitleHeader>
-              <TitleHeader>Richard Kosta</TitleHeader>
-            </BoxTitleHeader>
-          </BoxView>
-
-          <Notification source={require("../../assets/Sino.png")} />
-        </HeaderContent>
-      </HeaderContainer>
+      <Header/>
 
       <Calendar />
 
-      <ContentSituacao>
-        <BoxSituacao>
-          <TitleSituacao>Agendadas</TitleSituacao>
-        </BoxSituacao>
+      <Situacao/>
 
-        <BoxSituacao>
-          <TitleSituacao>Realizadas</TitleSituacao>
-        </BoxSituacao>
-
-        <BoxSituacao>
-          <TitleSituacao>Canceladas</TitleSituacao>
-        </BoxSituacao>
-      </ContentSituacao>
-
-      <ContainerConsultas>
-        <CardConsulta>
-          <ImageConsulta source={require("../../assets/Claudio.png")} />
-
-          <BoxConsultasText>
-            <CardTitle>Dr. Claudio</CardTitle>
-            <CardSubTitle>22 anos · Rotina</CardSubTitle>
-            <Horario>
-              <AntDesign
-                name="clockcircle"
-                size={14}
-                color="#49B3BA"
-              /> 14:00
-            </Horario>
-          </BoxConsultasText>
-
-          <ModalButton
-            onPress={() => { setShowCancelar(true) }}
-          >
-            <TextCancel>Cancelar</TextCancel>
-          </ModalButton>
-        </CardConsulta>
-      </ContainerConsultas>
+      <Cards/>
 
       <ContainerButtonAgendar>
         <ButtonAgendar source={require("../../assets/Agendar.png")} />
