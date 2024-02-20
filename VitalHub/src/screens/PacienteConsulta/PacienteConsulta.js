@@ -38,7 +38,7 @@ import { Cards } from "../../components/Cards/Index";
 
 export const PacienteConsulta = () => {
   const [showCancelar, setShowCancelar] = useState(false);
-
+  const [state, setState] = useState();
   return (
     <Container>
       <StatusBar backgroundColor={"transparent"} barStyle={"dark-content"} />
@@ -47,9 +47,9 @@ export const PacienteConsulta = () => {
 
       <Calendar />
 
-      <Situacao/>
+      <Situacao situacao={state} setSituacao={setState}/>
 
-      <Cards/>
+      <Cards situacao={state}/>
 
       <ContainerButtonAgendar>
         <ButtonAgendar source={require("../../assets/Agendar.png")} />

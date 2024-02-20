@@ -66,9 +66,10 @@ export const CardConsulta = styled.View.attrs({
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     margin-top: 12px;
     margin-bottom: 5px;
+    padding: 5px;
 `;
 
 // Imagem do usuario no card
@@ -83,6 +84,7 @@ export const BoxConsultasText = styled.View`
   height: 90%;
   align-items: center;
   justify-content: space-evenly;
+  margin-left: 40px;
 `;
 export const CardTitle = styled.Text`
   font-size: 16px;
@@ -120,6 +122,7 @@ export const TextCancel = styled.Text`
   font-size: 12px;
   font-family: "MontserratAlternates_500Medium";
   color: #f64f77;
+  margin-left: 12px;
 `;
 export const TextVerProntuario = styled(TextCancel)`
   color: #344f8f;

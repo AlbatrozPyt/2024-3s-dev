@@ -1,12 +1,13 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { BoxSituacao, ContentSituacao, TitleSituacao } from "./Style"
 
-export const Situacao = () => {
-    const [situacao, setSituacao] = useState();
+export const Situacao = ({ situacao, setSituacao }) => {
+    // const [situacao, setSituacao] = useState();
+
     return (
         <ContentSituacao>
-            <BoxSituacao clickButton={situacao === "agendada"} onPress={() => { setSituacao("agendada") }}>
-                <TitleSituacao clickButton={situacao === "agendada"}>Agendadas</TitleSituacao>
+            <BoxSituacao clickButton={situacao === "agendadas"} onPress={() => { setSituacao("agendadas") }}>
+                <TitleSituacao clickButton={situacao === "agendadas"}>Agendadas</TitleSituacao>
             </BoxSituacao>
 
             <BoxSituacao clickButton={situacao === "realizadas"} onPress={() => { setSituacao("realizadas") }}>
