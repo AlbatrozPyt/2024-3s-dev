@@ -35,6 +35,7 @@ export const ImagePaciente = styled.Image`
     width: 90%;
     height: 181px;
     border-radius: 10px;
+    margin-top: 30px;
 `
 
 // Agendar consulta

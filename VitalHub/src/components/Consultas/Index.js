@@ -2,8 +2,6 @@ import { useContext, useState } from "react";
 import { BoxSituacao, ContentSituacao, TitleSituacao } from "./Style"
 
 export const Situacao = ({ situacao, setSituacao }) => {
-    // const [situacao, setSituacao] = useState();
-
     return (
         <ContentSituacao>
             <BoxSituacao clickButton={situacao === "agendadas"} onPress={() => { setSituacao("agendadas") }}>

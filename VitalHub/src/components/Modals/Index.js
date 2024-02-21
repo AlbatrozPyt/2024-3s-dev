@@ -19,9 +19,9 @@ import { BoxConsultasText } from "../Consultas/Style";
 import { BoxTitleHeader, SubTitleHeader } from "../Header/Style";
 
 // Modal de cancelamento
-export const ModalCancelar = () => {
+export const ModalCancelar = ({ showModal = false }) => {
   return (
-    <ModalBackground>
+    <ModalBackground showModal={showModal}>
       <BoxModalCancelar>
         <Title>Cancelar consulta</Title>
 
@@ -41,18 +41,20 @@ export const ModalCancelar = () => {
 };
 
 // Modal de inserir prontuario
-export const ModalProntuario = () => {
+export const ModalProntuario = ( {image, name, age, email} ) => {
   return (
     <ModalBackground>
       <BoxModalProntuario>
-        <ImagePaciente
-          source={require("../../../assets/PacienteProntuario.png")}
-        />
+        {/* <ImagePaciente
+          source={require(`../../assets/${image}.png`)}
+        /> */}
 
-        <Title> Niccole Sarga</Title>
+        <Title>{name}</Title>
+        <Title>{image}</Title>
+
 
         <TextModalProntuario>
-          22 anos niccole.sarga@gmail.com
+          {age} · {email}
         </TextModalProntuario>
 
         <Button>

@@ -8,10 +8,13 @@ import { Footer } from "../../components/MenuFooter/Index";
 import { Cards } from "../../components/Cards/Index";
 import { TitleHeader } from "../../components/Header/Style";
 import { useContext, useState } from "react";
+import { ModalCancelar, ModalProntuario } from "../../components/Modals/Index";
 
 export const MedicoConsultas = ({ navigation }) => {
 
   const [state, setState] = useState();
+  const [modal, setModal] = useState();
+  const [paciente, setPaciente] = useState();
 
   return (
     <Container>
@@ -19,11 +22,23 @@ export const MedicoConsultas = ({ navigation }) => {
 
       <Header />
 
-      <Calendar/>
+      <Calendar />
 
-      <Situacao situacao={state} setSituacao={setState}/>
+      <Situacao situacao={state} setSituacao={setState} />
 
-      <Cards situacao={state}/>
+      <Cards setPaciente={setPaciente} setModal={setModal} situacao={state} />
+
+      {
+        modal === true ?
+          (
+            <ModalProntuario
+              image={paciente.image}
+              name={paciente.name}
+              age={paciente.age}
+              email={paciente.email}
+            />
+          ) : null
+      }
 
       <Footer />
     </Container>
