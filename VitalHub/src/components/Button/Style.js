@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Button = styled.TouchableOpacity`
     width: 90%;
@@ -26,4 +26,20 @@ export const ButtonExit = styled(Button)`
     width: 189px;
     background-color: #ACABB7;
     border: 1px solid #ACABB7;
+`
+
+// CheckBox
+export const CheckBox = styled.TouchableHighlight.attrs({
+    underlayColor: "transparent"
+})`
+    width: 88px;
+    height: 40px;
+    border: 2px solid #49B3BA;
+    border-radius: 5px;
+    margin-top: 15px;
+    padding: 5px;
+    ${props => props.clickButton
+        ? css`background-color: #49B3BA;`
+        : css`background-color: #fff;`
+    }
 `

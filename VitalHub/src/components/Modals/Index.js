@@ -1,6 +1,6 @@
-import { ButtonTitle, SimpleText, TextSemiBold, Title } from "../Title/Style";
-import { Button } from "../Button/Style";
-import { CheckBox, Input } from "../Input/Style";
+import { ButtonTitle, SimpleText, TextCheckbox, TextSemiBold, Title } from "../Title/Style";
+import { Button, CheckBox } from "../Button/Style";
+import { Input } from "../Input/Style";
 import {
   BoxModalAgendamento,
   BoxModalAgendar,
@@ -14,14 +14,16 @@ import {
 } from "./Style";
 import { LinkAccount } from "../ContextAccout/Style";
 import { Container, ContainerCheck, ContainerInputProntuario, ContainerTopicoAgendamento } from "../Container/Style";
-import { TextInput } from "react-native";
+import { Text, TextInput, TouchableOpacity } from "react-native";
 import { BoxConsultasText } from "../Consultas/Style";
 import { BoxTitleHeader, SubTitleHeader } from "../Header/Style";
+import { useState } from "react";
+import { ButtonCancel } from "../Button/Index";
 
 // Modal de cancelamento
-export const ModalCancelar = ({ showModal = false }) => {
+export const ModalCancelar = ({ setModal }) => {
   return (
-    <ModalBackground showModal={showModal}>
+    <ModalBackground showModal={setModal}>
       <BoxModalCancelar>
         <Title>Cancelar consulta</Title>
 
@@ -34,23 +36,22 @@ export const ModalCancelar = ({ showModal = false }) => {
           <ButtonTitle>confirmar</ButtonTitle>
         </Button>
 
-        <LinkAccount style={{ marginTop: 0 }}>Cancelar</LinkAccount>
+        <ButtonCancel setModal={setModal}/>
       </BoxModalCancelar>
     </ModalBackground>
   );
 };
 
 // Modal de inserir prontuario
-export const ModalProntuario = ( {image, name, age, email} ) => {
+export const ModalProntuario = ({ setModal, name, age, email }) => {
   return (
     <ModalBackground>
       <BoxModalProntuario>
-        {/* <ImagePaciente
-          source={require(`../../assets/${image}.png`)}
-        /> */}
+        <ImagePaciente
+          source={require("../../assets/vinicius.png")}
+        />
 
         <Title>{name}</Title>
-        <Title>{image}</Title>
 
 
         <TextModalProntuario>
@@ -61,28 +62,29 @@ export const ModalProntuario = ( {image, name, age, email} ) => {
           <ButtonTitle>inserir prontuário</ButtonTitle>
         </Button>
 
-        <LinkAccount>Cancelar</LinkAccount>
+        <ButtonCancel setModal={setModal}/>
       </BoxModalProntuario>
     </ModalBackground>
   );
 };
 
 // Modal de agendamento da consulta
-export const ModalAgendarConsulta = () => {
+export const ModalAgendarConsulta = ({setModal}) => {
   return (
     <ModalBackground>
       <BoxModalAgendar>
         <ContainerInputProntuario>
-          <TextAgendar>Informe o tipo de consulta</TextAgendar>
-          <Input placeholder="Tipo de consulta" />
-        </ContainerInputProntuario>
-
-        <ContainerInputProntuario>
           <TextAgendar>Qual o nível da consulta</TextAgendar>
           <ContainerCheck>
-            <CheckBox placeholder="Rotina" />
-            <CheckBox placeholder="Exame" />
-            <CheckBox placeholder="Urgência" />
+            <CheckBox>
+              <TextCheckbox>Rotina</TextCheckbox>
+            </CheckBox>
+            <CheckBox>
+              <TextCheckbox>Exame</TextCheckbox>
+            </CheckBox>
+            <CheckBox>
+              <TextCheckbox>Urgência</TextCheckbox>
+            </CheckBox>
           </ContainerCheck>
         </ContainerInputProntuario>
 
@@ -95,7 +97,7 @@ export const ModalAgendarConsulta = () => {
           <ButtonTitle>continuar</ButtonTitle>
         </Button>
 
-        <LinkAccount>Cancelar</LinkAccount>
+        <ButtonCancel setModal={setModal}/>
       </BoxModalAgendar>
     </ModalBackground>
   );
@@ -155,7 +157,7 @@ export const ModalAgendamento = () => {
           <ButtonTitle>confirmar</ButtonTitle>
         </Button>
 
-        <LinkAccount>cancelar</LinkAccount>
+        <ButtonCancel/>
       </BoxModalAgendamento>
 
     </ModalBackground>

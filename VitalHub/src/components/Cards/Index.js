@@ -5,7 +5,7 @@ import { ModalCancelar } from "../Modals/Index"
 
 import { AntDesign } from "@expo/vector-icons";
 
-export const Cards = ({ situacao, setModal, setPaciente }) => {
+export const Cards = ({ situacao, setModalView, setModalCancel,setPaciente }) => {
     const lista = [{
         id: 1,
         name: "Nicolle Sarga",
@@ -23,6 +23,15 @@ export const Cards = ({ situacao, setModal, setPaciente }) => {
         image: "vinicius.png",
         type: "Exame",
         situacao: "realizadas"
+    },
+    {
+        id: 3,
+        name: "Lucas",
+        age: "16 anos",
+        email: "lucas@email.com",
+        image: "lucas.png",
+        type: "Rotina",
+        situacao: "canceladas"
     }]
     return (
         <ContainerConsultas>
@@ -32,7 +41,7 @@ export const Cards = ({ situacao, setModal, setPaciente }) => {
                 if (obj.situacao === "canceladas" && obj.situacao === situacao) {
                     return (
                         <CardConsulta>
-                            <ImageConsulta source={require("../../assets/Nicolle.png")} />
+                            <ImageConsulta source={require("../../assets/lucas.jpg")} />
 
                             <BoxConsultasText>
                                 <CardTitle>{obj.name}</CardTitle>
@@ -60,7 +69,7 @@ export const Cards = ({ situacao, setModal, setPaciente }) => {
 
                             </BoxConsultasText>
 
-                            <ModalButton onPress={() => { setModal(true); setPaciente(obj); }}>
+                            <ModalButton onPress={() => { setModalView(true); setPaciente(obj); }}>
                                 <TextVerProntuario>Ver prontuario</TextVerProntuario>
                             </ModalButton>
                         </CardConsulta>
@@ -82,7 +91,7 @@ export const Cards = ({ situacao, setModal, setPaciente }) => {
 
                             </BoxConsultasText>
 
-                            <ModalButton>
+                            <ModalButton onPress={() => {setModalCancel(true)}}>
                                 <TextCancel>cancelar</TextCancel>
                             </ModalButton>
                         </CardConsulta>

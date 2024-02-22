@@ -52,3 +52,11 @@ export const Label = styled(SimpleText)`
 export const TextNote = styled(CardSubTitle)`
     color: #F9A620;
 `
+
+// Texto do checkbox
+export const  TextCheckbox = styled(ButtonTitle) `
+    color: #34898F;
+    text-transform: none;
+    text-align: center;
+    background-color: transparent;
+`

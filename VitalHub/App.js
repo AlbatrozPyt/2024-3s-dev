@@ -18,6 +18,7 @@ import { CriarConta } from "./src/screens/CriarConta/CriarConta";
 import { MedicoConsultas } from "./src/screens/MedicoConsultas/MedicoConsultas";
 import {
   ModalAgendamento,
+  ModalAgendarConsulta,
   ModalCancelar,
   ModalConsulta,
   ModalProntuario,
@@ -98,7 +99,7 @@ export default function App() {
 
         <Stack.Screen
           name="Modal Agendamento"
-          component={ModalAgendamento}
+          component={ModalAgendarConsulta}
           options={{ title: "Modal Agendamento" }}
         />
 

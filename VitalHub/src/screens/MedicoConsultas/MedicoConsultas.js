@@ -12,8 +12,9 @@ import { ModalCancelar, ModalProntuario } from "../../components/Modals/Index";
 
 export const MedicoConsultas = ({ navigation }) => {
 
-  const [state, setState] = useState();
-  const [modal, setModal] = useState();
+  const [situacao, setSituacao] = useState();
+  const [modalView, setModalView] = useState();
+  const [modalCancel, setModalCancel] = useState();
   const [paciente, setPaciente] = useState();
 
   return (
@@ -24,18 +25,28 @@ export const MedicoConsultas = ({ navigation }) => {
 
       <Calendar />
 
-      <Situacao situacao={state} setSituacao={setState} />
+      <Situacao situacao={situacao} setSituacao={setSituacao} />
 
-      <Cards setPaciente={setPaciente} setModal={setModal} situacao={state} />
+      <Cards setPaciente={setPaciente} setModalView={setModalView} setModalCancel={setModalCancel} situacao={situacao} />
 
+      {/* Modal */}
       {
-        modal === true ?
+        modalView === true ?
           (
             <ModalProntuario
               image={paciente.image}
               name={paciente.name}
               age={paciente.age}
               email={paciente.email}
+              setModal={setModalView}
+            />
+          ) : (null)
+      }
+      {
+        modalCancel === true ?
+          (
+            <ModalCancelar
+              setModal={setModalCancel}
             />
           ) : null
       }

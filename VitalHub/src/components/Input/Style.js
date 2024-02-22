@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 // Input Padrao
 export const Input = styled.TextInput.attrs({
@@ -17,14 +17,6 @@ export const Input = styled.TextInput.attrs({
 export const InputLarge = styled(Input)`
     padding-top: 2px;
     height: 121px;
-`
-// CheckBox
-export const CheckBox = styled(Input)`
-    width: 88px;
-    height: 40px;
-    padding: 0;
-    text-align: center;
-    font-size: 14px;
 `
 
 // Caixa do input de codigo

@@ -1,34 +1,7 @@
 import { StatusBar } from "react-native";
 import { Container } from "../../components/Container/Style";
-import { LinearGradient } from "expo-linear-gradient";
-import {
-  BoxTitleHeader,
-  BoxView,
-  HeaderContainer,
-  HeaderContent,
-  Notification,
-  SubTitleHeader,
-  TitleHeader,
-} from "../../components/Header/Style";
-import { ImagePerfil } from "../../components/ImagePerfil/Style";
-import {
-  BoxConsultasText,
-  BoxSituacao,
-  CardConsulta,
-  CardSubTitle,
-  CardTitle,
-  ContainerConsultas,
-  ContentSituacao,
-  Horario,
-  ImageConsulta,
-  ModalButton,
-  TextCancel,
-  TitleSituacao,
-} from "../../components/Consultas/Style";
-import { AntDesign } from "@expo/vector-icons";
-import { FontAwesome6 } from "@expo/vector-icons";
 import { ButtonAgendar, ContainerButtonAgendar } from "../../components/ButtonIcons/Style";
-import { ModalCancelar } from "../../components/Modals/Index";
+import { ModalAgendarConsulta } from "../../components/Modals/Index";
 import { useState } from "react";
 import { Calendar } from "../../components/Calendar/Index";
 import { Situacao } from "../../components/Consultas/Index"
@@ -37,25 +10,31 @@ import { Cards } from "../../components/Cards/Index";
 
 
 export const PacienteConsulta = () => {
-  const [showCancelar, setShowCancelar] = useState(false);
+  const [showAgendar, setShowAgendar] = useState(false);
   const [state, setState] = useState();
   return (
     <Container>
       <StatusBar backgroundColor={"transparent"} barStyle={"dark-content"} />
 
-      <Header/>
+      <Header />
 
       <Calendar />
 
-      <Situacao situacao={state} setSituacao={setState}/>
+      <Situacao situacao={state} setSituacao={setState} />
 
-      <Cards situacao={state}/>
+      <Cards situacao={state} />
 
-      <ContainerButtonAgendar>
+      <ContainerButtonAgendar onPress={() => {setShowAgendar(true)}}>
         <ButtonAgendar source={require("../../assets/Agendar.png")} />
       </ContainerButtonAgendar>
 
-      {showCancelar ? (<ModalCancelar />) : null}
+      {
+        showAgendar ? 
+          <ModalAgendarConsulta 
+            setModal={setShowAgendar}
+          /> 
+        : null
+      }
     </Container>
   );
 };
