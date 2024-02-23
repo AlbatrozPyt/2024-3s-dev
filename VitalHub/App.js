@@ -21,6 +21,7 @@ import {
   ModalAgendarConsulta,
   ModalCancelar,
   ModalConsulta,
+  ModalLocalizacao,
   ModalProntuario,
 } from "./src/components/Modals/Index.js";
 import {
@@ -31,6 +32,7 @@ import { PacienteConsulta } from "./src/screens/PacienteConsulta/PacienteConsult
 import { Perfil } from "./src/screens/Perfil/Perfil.js";
 import { SelecionarClinica } from "./src/screens/SelecionarClinica/SelecionarClinica.js";
 import { SelecionarMedico } from "./src/screens/SelecionarMedico/SelecionarMedico.js";
+import { VisualizarPrescricao } from "./src/screens/VisualizarPrescricao/VisualizarPrescricao.js";
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -98,12 +100,6 @@ export default function App() {
         />
 
         <Stack.Screen
-          name="Modal Agendamento"
-          component={ModalAgendarConsulta}
-          options={{ title: "Modal Agendamento" }}
-        />
-
-        <Stack.Screen
           name="Prontuario"
           component={ProntuarioMedico}
           options={{ title: "Prontuario" }}
@@ -126,11 +122,18 @@ export default function App() {
           component={SelecionarClinica}
           options={{ title: "SelecionarClinica" }}
         />
-        
+
         <Stack.Screen
           name="SelecionarMedico"
           component={SelecionarMedico}
           options={{ title: "SelecionarMedico" }}
+        />
+
+
+        <Stack.Screen
+          name="Visualizar prescricao"
+          component={VisualizarPrescricao}
+          options={{ title: "Visualizar prescricao" }}
         />
       </Stack.Navigator>
     </NavigationContainer>

@@ -48,8 +48,8 @@ export const Navegacao = ({ navigation }) => {
                 onPress={() => navigation.navigate("SelecionarMedico")}
             />
             <Button
-                title="Modal Agendamento"
-                onPress={() => navigation.navigate("Modal Agendamento")}
+                title="Visualizar prescricao"
+                onPress={() => navigation.navigate("Visualizar prescricao")}
             />
         </View>
     )

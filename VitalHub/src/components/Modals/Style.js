@@ -62,3 +62,8 @@ export const DadosAgedamento = styled.View`
   padding: 5px;
   height: fit-content;
 `
+
+//Modal de loacalizacao da consuta
+export const BoxLocalizacao = styled(BoxModalAgendar)`
+    height: 316px;
+`

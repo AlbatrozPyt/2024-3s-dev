@@ -18,13 +18,13 @@ import {
 } from "../../components/Input/Style";
 import { Button } from "../../components/Button/Style";
 import { LinkAccount } from "../../components/ContextAccout/Style";
-import { ImagePacienteLarge } from "../../components/Image/Style";
+import { ImageLarge } from "../../components/Image/Style";
 
 export const ProntuarioMedico = () => {
   return (
     <ContainerScroll>
       <Container>
-        <ImagePacienteLarge source={require("../../assets/KostaLarge.png")} />
+        <ImageLarge source={require("../../assets/KostaLarge.png")} />
 
         <Title>Richard Kosta</Title>
 
@@ -61,7 +61,7 @@ export const EditarProntuario = () => {
   return (
     <ContainerScroll>
       <Container>
-        <ImagePacienteLarge source={require("../../assets/KostaLarge.png")} />
+        <ImageLarge source={require("../../assets/KostaLarge.png")} />
 
         <Title>Richard Kosta</Title>
 

@@ -54,6 +54,7 @@ export const ContainerInput = styled(ContainerInputProntuario)`
 export const ContainerMultiInput = styled(ContainerCheck)`
   justify-content: space-between;
   align-self: center;
+  margin-bottom: 30px;
 `
 // Container da dos card selecionar clinica
 export const ContainerSelecionarClinica = styled(ContainerScroll)`

@@ -5,7 +5,7 @@ import {
   ContainerMultiInput,
   ContainerScroll,
 } from "../../components/Container/Style";
-import { ImagePacienteLarge } from "../../components/Image/Style";
+import { ImageLarge } from "../../components/Image/Style";
 import { ButtonTitle, Label, Title } from "../../components/Title/Style";
 import { TextModalProntuario } from "../../components/Modals/Style";
 import {
@@ -17,7 +17,7 @@ import { Button, ButtonExit } from "../../components/Button/Style"
 export const Perfil = () => {
   return (
     <Container>
-      <ImagePacienteLarge source={require("../../assets/KostaLarge.png")} />
+      <ImageLarge source={require("../../assets/KostaLarge.png")} />
 
       <ContainerFloating>
         <Title>Richard Kosta</Title>

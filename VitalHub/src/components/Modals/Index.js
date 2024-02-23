@@ -1,7 +1,8 @@
-import { ButtonTitle, SimpleText, TextCheckbox, TextSemiBold, Title } from "../Title/Style";
+import { ButtonTitle, Label, SimpleText, TextCheckbox, TextSemiBold, Title } from "../Title/Style";
 import { Button, CheckBox } from "../Button/Style";
-import { Input } from "../Input/Style";
+import { Input, InputDisabled, InputLargeDisabled, InputSmallDisabled } from "../Input/Style";
 import {
+  BoxLocalizacao,
   BoxModalAgendamento,
   BoxModalAgendar,
   BoxModalCancelar,
@@ -13,7 +14,7 @@ import {
   TextModalProntuario,
 } from "./Style";
 import { LinkAccount } from "../ContextAccout/Style";
-import { Container, ContainerCheck, ContainerInputProntuario, ContainerTopicoAgendamento } from "../Container/Style";
+import { Container, ContainerCheck, ContainerInput, ContainerInputProntuario, ContainerMultiInput, ContainerTopicoAgendamento } from "../Container/Style";
 import { Text, TextInput, TouchableOpacity } from "react-native";
 import { BoxConsultasText } from "../Consultas/Style";
 import { BoxTitleHeader, SubTitleHeader } from "../Header/Style";
@@ -36,7 +37,7 @@ export const ModalCancelar = ({ setModal }) => {
           <ButtonTitle>confirmar</ButtonTitle>
         </Button>
 
-        <ButtonCancel setModal={setModal}/>
+        <ButtonCancel setModal={setModal} />
       </BoxModalCancelar>
     </ModalBackground>
   );
@@ -62,14 +63,14 @@ export const ModalProntuario = ({ setModal, name, age, email }) => {
           <ButtonTitle>inserir prontuário</ButtonTitle>
         </Button>
 
-        <ButtonCancel setModal={setModal}/>
+        <ButtonCancel setModal={setModal} />
       </BoxModalProntuario>
     </ModalBackground>
   );
 };
 
 // Modal de agendamento da consulta
-export const ModalAgendarConsulta = ({setModal}) => {
+export const ModalAgendarConsulta = ({ setModal }) => {
   return (
     <ModalBackground>
       <BoxModalAgendar>
@@ -97,7 +98,7 @@ export const ModalAgendarConsulta = ({setModal}) => {
           <ButtonTitle>continuar</ButtonTitle>
         </Button>
 
-        <ButtonCancel setModal={setModal}/>
+        <ButtonCancel setModal={setModal} />
       </BoxModalAgendar>
     </ModalBackground>
   );
@@ -118,6 +119,7 @@ export const ModalConsulta = () => {
   );
 };
 
+// Modal de visualizacao do agendamento
 export const ModalAgendamento = () => {
   return (
     <ModalBackground>
@@ -157,9 +159,37 @@ export const ModalAgendamento = () => {
           <ButtonTitle>confirmar</ButtonTitle>
         </Button>
 
-        <ButtonCancel/>
+        <ButtonCancel />
       </BoxModalAgendamento>
 
     </ModalBackground>
+  )
+}
+
+export const ModalLocalizacao = () => {
+  return (
+    <BoxLocalizacao>
+      <Title>Clínica Natureh</Title>
+      <TextModalProntuario>
+        São Paulo, SP
+      </TextModalProntuario>
+
+      <ContainerInputProntuario>
+        <Label>Endereço</Label>
+        <InputDisabled editable={false} placeholder="Rua Vicenso Silva, 987" />
+      </ContainerInputProntuario>
+
+      <ContainerMultiInput>
+          <ContainerInput style={{width: "fit-content"}}>
+            <Label>Número</Label>
+            <InputSmallDisabled value="578" editable={false} />
+          </ContainerInput>
+
+          <ContainerInput style={{width: "fit-content"}}>
+            <Label>Bairro</Label>
+            <InputSmallDisabled value="Moema-SP" editable={false} />
+          </ContainerInput>
+        </ContainerMultiInput>
+    </BoxLocalizacao>
   )
 }

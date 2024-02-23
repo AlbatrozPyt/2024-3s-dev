@@ -43,3 +43,16 @@ export const CheckBox = styled.TouchableHighlight.attrs({
         : css`background-color: #fff;`
     }
 `
+
+// Enviar Imagem
+export const ButtonEnviarImagem = styled.TouchableOpacity`
+    background: #49B3BA;
+    width: 174px;
+    height: 44px;
+    margin-top: 10px;
+    margin-bottom: 19px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`
