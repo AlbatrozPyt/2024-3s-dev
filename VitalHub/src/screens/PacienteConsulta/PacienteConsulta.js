@@ -3,10 +3,11 @@ import { Container } from "../../components/Container/Style";
 import { ButtonAgendar, ContainerButtonAgendar } from "../../components/ButtonIcons/Style";
 import { ModalAgendarConsulta } from "../../components/Modals/Index";
 import { useState } from "react";
-import { Calendar } from "../../components/Calendar/Index";
+import { CalendarRow } from "../../components/Calendar/Index";
 import { Situacao } from "../../components/Consultas/Index"
 import { Header } from "../../components/Header/Index";
 import { Cards } from "../../components/Cards/Index";
+import { Calendar } from "react-native-calendars";
 
 
 export const PacienteConsulta = () => {

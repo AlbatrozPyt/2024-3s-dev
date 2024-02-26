@@ -17,14 +17,6 @@ import { RedefinirSenha } from "./src/screens/RedefinirSenha/RedefinirSenha";
 import { CriarConta } from "./src/screens/CriarConta/CriarConta";
 import { MedicoConsultas } from "./src/screens/MedicoConsultas/MedicoConsultas";
 import {
-  ModalAgendamento,
-  ModalAgendarConsulta,
-  ModalCancelar,
-  ModalConsulta,
-  ModalLocalizacao,
-  ModalProntuario,
-} from "./src/components/Modals/Index.js";
-import {
   EditarProntuario,
   ProntuarioMedico,
 } from "./src/screens/ProntuarioMedico/ProntuarioMedico.js";
@@ -33,6 +25,9 @@ import { Perfil } from "./src/screens/Perfil/Perfil.js";
 import { SelecionarClinica } from "./src/screens/SelecionarClinica/SelecionarClinica.js";
 import { SelecionarMedico } from "./src/screens/SelecionarMedico/SelecionarMedico.js";
 import { VisualizarPrescricao } from "./src/screens/VisualizarPrescricao/VisualizarPrescricao.js";
+import CalendarComponent, { SelecionarData } from "./src/components/SelecionarData/Index.js"
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { FontAwesome6 } from "@expo/vector-icons";
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -48,9 +43,11 @@ export default function App() {
     return null;
   }
 
+  const Tab = createBottomTabNavigator();
+
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      {/* <Stack.Navigator>
         <Stack.Screen
           name="Navegacao"
           component={Navegacao}
@@ -129,13 +126,39 @@ export default function App() {
           options={{ title: "SelecionarMedico" }}
         />
 
-
         <Stack.Screen
           name="Visualizar prescricao"
           component={VisualizarPrescricao}
           options={{ title: "Visualizar prescricao" }}
         />
-      </Stack.Navigator>
+
+        <Stack.Screen
+          name="SelecionarData"
+          component={SelecionarData}
+          options={{ title: "SelecionarData" }}
+        />
+      </Stack.Navigator> */}
+
+      <Tab.Navigator
+        screenOptions={({ route, iconName, color="#4E4B59" }) => ({
+          tabBarIcon: ({ focused }) => {
+           
+            if (route.name === "Agenda") {
+              iconName = 'calendar-check';
+              color="#607EC5";
+            } else if (route.name === 'Perfil') {
+              iconName = 'user-large'
+              color="#607EC5";
+            }
+
+            // You can return any component that you like here!
+            return <FontAwesome6 name={iconName} size={18} color={color} />;
+          }
+        })}
+      >
+        <Tab.Screen name="Agenda" component={MedicoConsultas} />
+        <Tab.Screen name="Perfil" component={Perfil} />
+      </Tab.Navigator>
     </NavigationContainer>
   );
 }

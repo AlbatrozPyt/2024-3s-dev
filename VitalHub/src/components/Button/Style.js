@@ -15,6 +15,11 @@ export const Button = styled.TouchableOpacity`
     border: 2px solid #496BBA;
 `
 
+export const ButtonExitApp = styled(Button)`
+    width: 189px;
+    background-color: ACABB7;
+`
+
 export const ButtonGoogle = styled(Button)`
     background-color: white;
     border: 2px solid #496BBA;

@@ -1,14 +1,12 @@
 import { StatusBar, Text, View } from "react-native";
 import { Container } from "../../components/Container/Style";
-
-import { Calendar } from "../../components/Calendar/Index";
 import { Situacao } from "../../components/Consultas/Index";
 import { Header } from "../../components/Header/Index";
 import { Footer } from "../../components/MenuFooter/Index";
 import { Cards } from "../../components/Cards/Index";
-import { TitleHeader } from "../../components/Header/Style";
-import { useContext, useState } from "react";
 import { ModalCancelar, ModalProntuario } from "../../components/Modals/Index";
+import { Calendar } from "../../components/Calendar/Index"
+import { useState } from "react";
 
 export const MedicoConsultas = ({ navigation }) => {
 
@@ -51,7 +49,7 @@ export const MedicoConsultas = ({ navigation }) => {
           ) : null
       }
 
-      <Footer />
+      {/* <Footer /> */}
     </Container>
   );
 };
