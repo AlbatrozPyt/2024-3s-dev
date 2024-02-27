@@ -44,7 +44,7 @@ export const ModalCancelar = ({ setModal }) => {
 };
 
 // Modal de inserir prontuario
-export const ModalProntuario = ({ setModal, name, age, email }) => {
+export const ModalProntuario = ({ setModal, name, age, email, navigation }) => {
   return (
     <ModalBackground>
       <BoxModalProntuario>
@@ -59,7 +59,8 @@ export const ModalProntuario = ({ setModal, name, age, email }) => {
           {age} · {email}
         </TextModalProntuario>
 
-        <Button>
+
+        <Button onPress={() => navigation.navigate("InserirProntuario")}>
           <ButtonTitle>inserir prontuário</ButtonTitle>
         </Button>
 

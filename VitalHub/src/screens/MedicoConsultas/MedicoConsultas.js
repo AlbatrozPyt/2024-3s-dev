@@ -17,7 +17,7 @@ export const MedicoConsultas = ({ navigation }) => {
 
   return (
     <Container>
-      <StatusBar backgroundColor={"transparent"} barStyle={"dark-content"} />
+      <StatusBar backgroundColor={"transparent"} barStyle={"dark-content"}  translucent={true} />
 
       <Header />
 

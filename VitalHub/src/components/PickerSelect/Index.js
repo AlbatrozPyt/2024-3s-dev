@@ -9,7 +9,7 @@ const InputSelect = () => {
       <RNPickerSelect
         style={style}
         Icon={() => {
-        //   return <FontAwesome name="caret-down" size={20} color="black" />
+          return <FontAwesome name="caret-down" size={20} color="#34898F" />
         }}
         placeholder={{
           label : 'Selecione um valor',
@@ -25,6 +25,7 @@ const InputSelect = () => {
           { label: "C++", value: "C++" },
           { label: "C", value: "C" },
         ]}
+        useNativeAndroidPickerStyle={false}
       />
     </View>
   )

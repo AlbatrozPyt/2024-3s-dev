@@ -14,7 +14,7 @@
     "@expo-google-fonts/quicksand": "^0.2.3",
     "@react-navigation/bottom-tabs": "^6.5.14",
     "@react-navigation/native": "^6.1.9",
-    "@react-navigation/native-stack": "^6.9.17",
+    "@react-navigation/native-stack": "^6.9.20",
     "axios": "^1.6.7",
     "expo": "~50.0.6",
     "expo-font": "~11.10.2",
