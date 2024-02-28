@@ -7,6 +7,9 @@ import { Cards } from "../../components/Cards/Index";
 import { ModalCancelar, ModalProntuario } from "../../components/Modals/Index";
 import { Calendar } from "../../components/Calendar/Index"
 import { useState } from "react";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { NavigationContainer } from "@react-navigation/native";
+import { ProntuarioMedico } from "../ProntuarioMedico/ProntuarioMedico";
 
 export const MedicoConsultas = ({ navigation }) => {
 
@@ -17,7 +20,7 @@ export const MedicoConsultas = ({ navigation }) => {
 
   return (
     <Container>
-      <StatusBar backgroundColor={"transparent"} barStyle={"dark-content"}  translucent={true} />
+      <StatusBar backgroundColor={"transparent"} barStyle={"dark-content"} translucent={true} />
 
       <Header />
 
@@ -37,6 +40,7 @@ export const MedicoConsultas = ({ navigation }) => {
               age={paciente.age}
               email={paciente.email}
               setModal={setModalView}
+              navigation={navigation}
             />
           ) : (null)
       }

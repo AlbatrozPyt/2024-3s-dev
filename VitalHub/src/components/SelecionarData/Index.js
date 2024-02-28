@@ -12,7 +12,7 @@ export const SelecionarData = () => {
 
       <CalendarComponent/>
 
-      <ContainerInputProntuario>
+      <ContainerInputProntuario style={{width: `80%`,}}>
         <Label>Selecione um horário disponível</Label>
         <InputSelect/>
       </ContainerInputProntuario>

@@ -30,7 +30,6 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { FontAwesome6 } from "@expo/vector-icons";
 
 export default function App() {
-  const Stack = createNativeStackNavigator();
 
   const [fontsloaded, fontsError] = useFonts({
     MontserratAlternates_600SemiBold,
@@ -44,22 +43,12 @@ export default function App() {
   }
 
   const Tab = createBottomTabNavigator();
-
-  const HomeStack = createNativeStackNavigator();
-
-  function HomeStackScreen() {
-    return (
-      <HomeStack.Navigator>
-        <HomeStack.Screen name="Navegacao" component={Navegacao} />
-        <HomeStack.Screen name="InserirProntuario" component={ProntuarioMedico} />
-        <HomeStack.Screen name="SelecionarData"  component={SelecionarData}/>
-      </HomeStack.Navigator>
-    );
-  }
+  const Stack = createNativeStackNavigator();
 
   return (
     <NavigationContainer>
-      {/* <Tab.Navigator
+      <Tab.Screen name="InserirProntuario" component={ProntuarioMedico} />
+      <Tab.Navigator
         screenOptions={({ route, iconName, color }) => ({
           tabBarIcon: ({ focused }) => {
 
@@ -80,9 +69,8 @@ export default function App() {
       >
         <Tab.Screen name="Agenda" component={MedicoConsultas} />
         <Tab.Screen name="Perfil" component={Perfil} />
-      </Tab.Navigator> */}
-
-      {HomeStackScreen()}
+        <Tab.Screen name="InserirProntuario" component={ProntuarioMedico} options={{tabBarItemStyle: {display:"none"}}} />
+      </Tab.Navigator>
     </NavigationContainer>
   );
 }

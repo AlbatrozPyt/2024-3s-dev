@@ -1,4 +1,5 @@
-import { Button, View } from "react-native"
+import {  Button, View } from "react-native"
+
 
 export const Navegacao = ({ navigation }) => {
     return (
@@ -22,7 +23,8 @@ export const Navegacao = ({ navigation }) => {
             <Button
                 title="Criar Conta"
                 onPress={() => navigation.navigate("Criar Conta")}
-            />
+            >
+            </Button>
             <Button
                 title="Consultas Medico"
                 onPress={() => navigation.navigate("ConsultasMedico")}
@@ -32,28 +34,8 @@ export const Navegacao = ({ navigation }) => {
                 onPress={() => navigation.navigate("ConsultasPaciente")}
             />
             <Button
-                title="Prontuario"
-                onPress={() => navigation.navigate("Prontuario")}
-            />
-            <Button
-                title="Editar Prontuario"
-                onPress={() => navigation.navigate("EditarProntuario")}
-            />
-            <Button
-                title="Selecionar Clinica"
-                onPress={() => navigation.navigate("SelecionarClinica")}
-            />
-            <Button
-                title="Selecionar Medico"
-                onPress={() => navigation.navigate("SelecionarMedico")}
-            />
-            <Button
-                title="Visualizar prescricao"
-                onPress={() => navigation.navigate("Visualizar prescricao")}
-            />
-            <Button
-                title="SelecionarData"
-                onPress={() => navigation.navigate("SelecionarData")}
+                title="Perfil"
+                onPress={() => navigation.navigate("Perfil")}
             />
         </View>
     )

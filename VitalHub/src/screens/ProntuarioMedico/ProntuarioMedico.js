@@ -19,6 +19,7 @@ import {
 import { Button } from "../../components/Button/Style";
 import { LinkAccount } from "../../components/ContextAccout/Style";
 import { ImageLarge } from "../../components/Image/Style";
+import { ButtonCancel } from "../../components/Button/Index";
 
 export const ProntuarioMedico = () => {
   return (
@@ -51,7 +52,7 @@ export const ProntuarioMedico = () => {
           <ButtonTitle>salvar</ButtonTitle>
         </Button>
 
-        <LinkAccount>Cancelar</LinkAccount>
+        <ButtonCancel setModal={false}/>
       </Container>
     </ContainerScroll>
   );

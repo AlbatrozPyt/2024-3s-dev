@@ -53,8 +53,8 @@ const style = StyleSheet.create({
     color: '#34898F',
     alignItems: 'center',
     justifyContent : 'center',
-    
-    fontFamily : 'MontserratAlternates_600SemiBold'
+    margin: 3,
+    fontFamily: 'MontserratAlternates_600SemiBold'
   },
   iconContainer : {
     top : '25%',

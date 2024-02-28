@@ -60,7 +60,7 @@ export const ModalProntuario = ({ setModal, name, age, email, navigation }) => {
         </TextModalProntuario>
 
 
-        <Button onPress={() => navigation.navigate("InserirProntuario")}>
+        <Button onPress={() => navigation.navigate('InserirProntuario')}>
           <ButtonTitle>inserir prontuário</ButtonTitle>
         </Button>
 
