@@ -7,7 +7,7 @@ import { LinkMedium } from "../../components/Link/Style"
 import { Button, ButtonGoogle } from "../../components/Button/Style"
 import { ContentAccount, LinkAccount, TextAccount } from "../../components/ContextAccout/Style"
 
-export const Login = () => {
+export const Login = ({navigation}) => {
     return (
         <Container>
             <Logo source={require("../../assets/VitalHub_Logo.png")} />
@@ -24,7 +24,7 @@ export const Login = () => {
             <LinkMedium>Esqueceu sua senha?</LinkMedium>
 
 
-            <Button>
+            <Button onPress={() => navigation.navigate("MedicoConsultas")}>
                 <ButtonTitle>Entrar</ButtonTitle>
             </Button>
 
@@ -35,7 +35,7 @@ export const Login = () => {
             </ButtonGoogle>
 
 
-            <ContentAccount>
+            <ContentAccount onPress={() => navigation.navigate("criar conta")} >
                 <TextAccount>Não tem conta ? <LinkAccount> Crie uma agora!</LinkAccount></TextAccount> 
             </ContentAccount>
         </Container>

@@ -28,6 +28,7 @@ import CalendarComponent, { SelecionarData } from "./src/components/SelecionarDa
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { FontAwesome6 } from "@expo/vector-icons";
+import { ModalProntuario } from "./src/components/Modals/Index.js";
 
 export default function App() {
 
@@ -42,35 +43,17 @@ export default function App() {
     return null;
   }
 
-  const Tab = createBottomTabNavigator();
   const Stack = createNativeStackNavigator();
 
   return (
-    <NavigationContainer>
-      <Tab.Screen name="InserirProntuario" component={ProntuarioMedico} />
-      <Tab.Navigator
-        screenOptions={({ route, iconName, color }) => ({
-          tabBarIcon: ({ focused }) => {
+    <NavigationContainer> 	
+      <Stack.Navigator>
+        <Stack.Screen name="login" component={Login} />
+        <Stack.Screen name="criar conta" component={CriarConta} />
+        <Stack.Screen name="MedicoConsultas" component={MedicoConsultas} />
+      </Stack.Navigator>
 
-            if (route.name === "Agenda") {
-              iconName = 'calendar-check';
-              color = focused ? "#607EC5" : "#4E4B59"
-            } else if (route.name === 'Perfil') {
-              iconName = 'user-large'
-              color = focused ? "#607EC5" : "#4E4B59"
-            }
 
-            // You can return any component that you like here!
-            return <FontAwesome6 name={iconName} size={18} color={color} />;
-          },
-          tabBarActiveTintColor: "#607EC5",
-          headerShown: false
-        })}
-      >
-        <Tab.Screen name="Agenda" component={MedicoConsultas} />
-        <Tab.Screen name="Perfil" component={Perfil} />
-        <Tab.Screen name="InserirProntuario" component={ProntuarioMedico} options={{tabBarItemStyle: {display:"none"}}} />
-      </Tab.Navigator>
     </NavigationContainer>
   );
 }

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ContentAccount = styled.View`
+export const ContentAccount = styled.TouchableOpacity`
     width: 284px;
     height: 40px;
     margin-top: 30PX;

@@ -21,7 +21,7 @@ import { LinkAccount } from "../../components/ContextAccout/Style";
 import { ImageLarge } from "../../components/Image/Style";
 import { ButtonCancel } from "../../components/Button/Index";
 
-export const ProntuarioMedico = () => {
+export const ProntuarioMedico = ({setModal}) => {
   return (
     <ContainerScroll>
       <Container>

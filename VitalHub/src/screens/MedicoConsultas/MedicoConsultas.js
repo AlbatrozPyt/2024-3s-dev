@@ -10,6 +10,8 @@ import { useState } from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
 import { ProntuarioMedico } from "../ProntuarioMedico/ProntuarioMedico";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { Perfil } from "../Perfil/Perfil";
 
 export const MedicoConsultas = ({ navigation }) => {
 
@@ -17,6 +19,8 @@ export const MedicoConsultas = ({ navigation }) => {
   const [modalView, setModalView] = useState();
   const [modalCancel, setModalCancel] = useState();
   const [paciente, setPaciente] = useState();
+
+  const Tab = createBottomTabNavigator();
 
   return (
     <Container>
@@ -28,22 +32,15 @@ export const MedicoConsultas = ({ navigation }) => {
 
       <Situacao situacao={situacao} setSituacao={setSituacao} />
 
-      <Cards setPaciente={setPaciente} setModalView={setModalView} setModalCancel={setModalCancel} situacao={situacao} />
+      <Cards
+        setPaciente={setPaciente}
+        setModalView={setModalView}
+        setModalCancel={setModalCancel}
+        situacao={situacao}
+        navigation={navigation}
+      />
 
       {/* Modal */}
-      {
-        modalView === true ?
-          (
-            <ModalProntuario
-              image={paciente.image}
-              name={paciente.name}
-              age={paciente.age}
-              email={paciente.email}
-              setModal={setModalView}
-              navigation={navigation}
-            />
-          ) : (null)
-      }
       {
         modalCancel === true ?
           (
@@ -54,6 +51,29 @@ export const MedicoConsultas = ({ navigation }) => {
       }
 
       {/* <Footer /> */}
+
+        <Tab.Navigator
+          screenOptions={({ route, iconName, color }) => ({
+            tabBarIcon: ({ focused }) => {
+
+              if (route.name === "Agenda") {
+                iconName = 'calendar-check';
+                color = focused ? "#607EC5" : "#4E4B59"
+              } else if (route.name === 'Perfil') {
+                iconName = 'user-large'
+                color = focused ? "#607EC5" : "#4E4B59"
+              }
+
+              // You can return any component that you like here!
+              return <FontAwesome6 name={iconName} size={18} color={color} />;
+            },
+            tabBarActiveTintColor: "#607EC5",
+            headerShown: false
+          })}
+        >
+          <Tab.Screen name="Agenda" component={MedicoConsultas} />
+          <Tab.Screen name="Perfil" component={Perfil} />
+        </Tab.Navigator>
     </Container>
   );
 };
