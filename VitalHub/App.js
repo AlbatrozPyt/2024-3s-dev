@@ -46,14 +46,13 @@ export default function App() {
   const Stack = createNativeStackNavigator();
 
   return (
-    <NavigationContainer> 	
+    <NavigationContainer>
       <Stack.Navigator>
+        {/* <Stack.Screen name="MedicoConsultas" component={MedicoConsultas} /> */}
+        <Stack.Screen name="Selecionar" component={SelecionarClinica} />     
         <Stack.Screen name="login" component={Login} />
         <Stack.Screen name="criar conta" component={CriarConta} />
-        <Stack.Screen name="MedicoConsultas" component={MedicoConsultas} />
       </Stack.Navigator>
-
-
     </NavigationContainer>
   );
 }
