@@ -9,7 +9,7 @@ export const BoxCardClinica = styled.View.attrs({
     shadowRadius: 2,
     elevation: 3,
 })`
-    width: 90%;
+    width: 100%;
     height: 84px;
     background-color: white;
     margin-top: 12px;

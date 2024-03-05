@@ -29,6 +29,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { FontAwesome6 } from "@expo/vector-icons";
 import { ModalProntuario } from "./src/components/Modals/Index.js";
+import { Main } from "./src/screens/Main/Main.js";
 
 export default function App() {
 
@@ -48,10 +49,20 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        {/* <Stack.Screen name="MedicoConsultas" component={MedicoConsultas} /> */}
-        <Stack.Screen name="Selecionar" component={SelecionarClinica} />     
+
         <Stack.Screen name="login" component={Login} />
+
+        <Stack.Screen name="Main" component={Main} />
+
+        <Stack.Screen name="Selecionar" component={SelecionarClinica} />
+
         <Stack.Screen name="criar conta" component={CriarConta} />
+
+        <Stack.Screen name="MedicoConsultas" component={MedicoConsultas} />
+
+        <Stack.Screen name="InserirProntuario" component={ProntuarioMedico} />
+
+        <Stack.Screen name="ModalVerProntuario" component={ModalProntuario}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

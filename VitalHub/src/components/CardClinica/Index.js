@@ -11,6 +11,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 export const CardClinicas = () => {
 
     const [state, setState] = useState("blue");
+    const [id, setId] = useState();
 
     const dados = [
         {
@@ -28,7 +29,6 @@ export const CardClinicas = () => {
             HorarioAtendimento: "Seg-Sex"
         }
     ]
-
     return (
         <ContainerSelecionarClinica>
             <ContainerInternoScroll>
@@ -38,9 +38,9 @@ export const CardClinicas = () => {
                     dados.map((obj) => {
                         return (
                             <BoxCardClinica>
-                                <CardClinica style={{backgroundColor: state}} onPress={() => obj.id ===  ?  setState("red") : setState("blue")}>
+                                <CardClinica>
                                     <BoxTitleHeader>
-                                        <CardTitle>{obj.nomeClinica}</CardTitle>
+                                        <CardTitle>{obj.nomeClinica}  {id}</CardTitle>
 
                                         <SubTitleHeader>{obj.localizacao}</SubTitleHeader>
                                     </BoxTitleHeader>

@@ -42,12 +42,12 @@ export const MedicoConsultas = ({ navigation }) => {
 
       {/* Modal */}
       {
-        modalCancel === true ?
-          (
-            <ModalCancelar
-              setModal={setModalCancel}
-            />
-          ) : null
+        // modalCancel === true ?
+        //   (
+        //     <ModalCancelar
+        //       setModal={setModalCancel}
+        //     />
+        //   ) : null
       }
 
         

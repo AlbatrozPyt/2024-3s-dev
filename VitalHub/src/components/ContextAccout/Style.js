@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ContentAccount = styled.TouchableOpacity`
     width: 284px;
     height: 40px;
-    margin-top: 30PX;
+    margin-top: 30px;
 `
 
 export const TextAccount = styled.Text`
@@ -12,8 +12,11 @@ export const TextAccount = styled.Text`
 `
 
 export const LinkAccount = styled(TextAccount)`
-    margin-top: 30px;
+    width: 100%;
+    text-align: center;
     text-decoration: underline;
     color: #4D659D;
-    padding-bottom: 20px;
+
+    /* margin-top: 30px; */
+    /* padding-bottom: 20px; */
 `

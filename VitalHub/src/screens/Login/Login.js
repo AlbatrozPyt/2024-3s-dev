@@ -8,6 +8,14 @@ import { Button, ButtonGoogle } from "../../components/Button/Style"
 import { ContentAccount, LinkAccount, TextAccount } from "../../components/ContextAccout/Style"
 
 export const Login = ({navigation}) => {
+
+    
+    async function Login()
+    {
+        navigation.navigate('Main')
+    }   
+
+
     return (
         <Container>
             <Logo source={require("../../assets/VitalHub_Logo.png")} />
@@ -24,7 +32,7 @@ export const Login = ({navigation}) => {
             <LinkMedium>Esqueceu sua senha?</LinkMedium>
 
 
-            <Button onPress={() => navigation.navigate("MedicoConsultas")}>
+            <Button onPress={(e) => Login()}>
                 <ButtonTitle>Entrar</ButtonTitle>
             </Button>
 

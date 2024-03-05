@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { BoxSituacao, ContentSituacao, TitleSituacao } from "./Style"
 
 export const Situacao = ({ situacao, setSituacao }) => {
-    return (
+     return (
         <ContentSituacao>
             <BoxSituacao clickButton={situacao === "agendadas"} onPress={() => { setSituacao("agendadas") }}>
                 <TitleSituacao clickButton={situacao === "agendadas"}>Agendadas</TitleSituacao>

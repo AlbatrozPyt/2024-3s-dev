@@ -44,7 +44,7 @@ export const ModalCancelar = ({ setModal }) => {
 };
 
 // Modal de inserir prontuario
-export const ModalProntuario = ({ name, age, email, navigation }) => {
+export const ModalProntuario = ({ name="user", age="20 anos", email="user@email.com", navigation }) => {
   return (
     <ModalBackground>
       <BoxModalProntuario>

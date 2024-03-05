@@ -3,12 +3,12 @@ import { Container } from "../../components/Container/Style"
 import { Input } from "../../components/Input/Style"
 import { Logo } from "../../components/Logo/Style"
 import { ButtonTitle, SimpleText, Title } from "../../components/Title/Style"
-import { LinkAccount } from "../../components/ContextAccout/Style"
+import { ContentAccount, LinkAccount } from "../../components/ContextAccout/Style"
 
-export const CriarConta = () => {
+export const CriarConta = ({navigation}) => {
     return (
         <Container>
-            <Logo source={require("../../assets/VitalHub_Logo.png")}/>
+            <Logo source={require("../../assets/VitalHub_Logo.png")} />
 
             <Title>Criar conta</Title>
 
@@ -20,11 +20,13 @@ export const CriarConta = () => {
             <Input placeholder="Senha" />
             <Input placeholder="Confirmar Senha" />
 
-            <Button>
+            <Button onPress={() => navigation.replace("Main")}>
                 <ButtonTitle>Cadastrar</ButtonTitle>
             </Button>
 
-            <LinkAccount>Cancelar</LinkAccount>
+            <ContentAccount onPress={() => navigation.replace("login")}>
+                <LinkAccount>Cancelar</LinkAccount>
+            </ContentAccount>
         </Container>
     )
 }

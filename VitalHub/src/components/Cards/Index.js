@@ -5,7 +5,7 @@ import { ModalCancelar } from "../Modals/Index"
 
 import { AntDesign } from "@expo/vector-icons";
 
-export const Cards = ({ situacao, setModalView, setModalCancel,setPaciente }) => {
+export const Cards = ({ situacao, navigation, setModalCancel,setPaciente }) => {
     const lista = [{
         id: 1,
         name: "Nicolle Sarga",
@@ -69,7 +69,7 @@ export const Cards = ({ situacao, setModalView, setModalCancel,setPaciente }) =>
 
                             </BoxConsultasText>
 
-                            <ModalButton onPress={() => { setModalView(true); setPaciente(obj); }}>
+                            <ModalButton onPress={() => { setPaciente(obj); navigation.navigate("ModalVerProntuario")}}>
                                 <TextVerProntuario>Ver prontuario</TextVerProntuario>
                             </ModalButton>
                         </CardConsulta>
