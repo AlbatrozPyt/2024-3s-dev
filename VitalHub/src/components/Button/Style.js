@@ -62,3 +62,8 @@ export const ButtonEnviarImagem = styled.TouchableOpacity`
     align-items: center;
     justify-content: center;
 `
+
+// Button esqueceu a senha
+export const ButtonForgotPassword = styled.TouchableOpacity`
+    width: 90%;
+`

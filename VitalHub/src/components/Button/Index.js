@@ -1,10 +1,12 @@
 import { TouchableOpacity } from "react-native"
-import { LinkAccount } from "../ContextAccout/Style"
+import { ContentAccount, LinkAccount } from "../ContextAccout/Style"
 
-export const ButtonCancel = ({screen=null, navigation}) => {
-    return (
-        <TouchableOpacity onPress={() =>  navigation.navigate(screen)}>
-          <LinkAccount>Cancelar</LinkAccount>
-        </TouchableOpacity>
-    )
+export const ButtonCancel = ({ screen = null, navigation }) => {
+  return (
+    <ContentAccount
+      onPress={() => navigation.replace(screen)}
+    >
+      <LinkAccount>Cancelar</LinkAccount>
+    </ContentAccount>
+  )
 }

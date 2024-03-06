@@ -1,5 +1,5 @@
 import { LinearGradient } from "expo-linear-gradient"
-import { BoxTitleHeader, BoxView, HeaderContainer, HeaderContent, Notification, SubTitleHeader, TitleHeader } from "./Style"
+import { BoxTitleHeader, BoxView, ButtonNotfication, HeaderContainer, HeaderContent, Notification, SubTitleHeader, TitleHeader } from "./Style"
 import { ImagePerfil } from "../ImagePerfil/Style"
 
 export const Header = () => {
@@ -28,7 +28,9 @@ export const Header = () => {
                     </BoxTitleHeader>
                 </BoxView>
 
-                <Notification source={require("../../assets/Sino.png")} />
+                <ButtonNotfication onPress={() => alert("Você não tem nenhuma notificação😔")}>
+                    <Notification source={require("../../assets/Sino.png")} />
+                </ButtonNotfication>
             </HeaderContent>
         </HeaderContainer>
     )

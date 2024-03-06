@@ -2,14 +2,14 @@ import { ButtonIcon, ContainerButtonIcon } from "../../components/ButtonIcons/St
 import { Container } from "../../components/Container/Style"
 import { Logo } from "../../components/Logo/Style"
 import { ButtonTitle, SimpleText, Title, UserEmail } from "../../components/Title/Style"
-import { LinkAccount } from "../../components/ContextAccout/Style"
+import { ContentAccount, LinkAccount } from "../../components/ContextAccout/Style"
 import { BoxCodeInput, CodeInput, Input } from "../../components/Input/Style"
 import { Button } from "../../components/Button/Style"
 
-export const VerificarEmail = () => {
+export const VerificarEmail = ({navigation}) => {
     return (
         <Container>
-            <ContainerButtonIcon>
+            <ContainerButtonIcon onPress={() => navigation.replace("login")}>
                 <ButtonIcon source={require("../../../assets/close.png")} />
             </ContainerButtonIcon>
 
@@ -28,11 +28,14 @@ export const VerificarEmail = () => {
                 <CodeInput placeholder={"0"} keyboardType="numeric" maxLength={1} />
             </BoxCodeInput>
 
-            <Button>
+            <Button onPress={() => navigation.navigate("RedefinirSenha")}>
                 <ButtonTitle>Entrar</ButtonTitle>
             </Button>
 
-            <LinkAccount>Reenviar Código</LinkAccount>
+
+            <ContentAccount>
+                <LinkAccount>Reenviar Código</LinkAccount>
+            </ContentAccount>
         </Container>
     )
 }

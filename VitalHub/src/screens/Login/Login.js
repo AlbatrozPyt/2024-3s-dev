@@ -4,16 +4,15 @@ import { Logo } from "../../components/Logo/Style"
 import { Title, ButtonTitle, ButtonTitleGoogle } from "../../components/Title/Style"
 import { Input } from "../../components/Input/Style"
 import { LinkMedium } from "../../components/Link/Style"
-import { Button, ButtonGoogle } from "../../components/Button/Style"
+import { Button, ButtonForgotPassword, ButtonGoogle } from "../../components/Button/Style"
 import { ContentAccount, LinkAccount, TextAccount } from "../../components/ContextAccout/Style"
 
-export const Login = ({navigation}) => {
+export const Login = ({ navigation }) => {
 
-    
-    async function Login()
-    {
-        navigation.navigate('Main')
-    }   
+
+    async function Login() {
+        navigation.replace('Main')
+    }
 
 
     return (
@@ -28,8 +27,9 @@ export const Login = ({navigation}) => {
             <Input placeholder="Senha" />
 
 
-
-            <LinkMedium>Esqueceu sua senha?</LinkMedium>
+            <ButtonForgotPassword onPress={() => navigation.replace("RecuperarSenha")}>
+                <LinkMedium>Esqueceu sua senha?</LinkMedium>
+            </ButtonForgotPassword>
 
 
             <Button onPress={(e) => Login()}>
@@ -43,8 +43,8 @@ export const Login = ({navigation}) => {
             </ButtonGoogle>
 
 
-            <ContentAccount onPress={() => navigation.navigate("criar conta")} >
-                <TextAccount>Não tem conta ? <LinkAccount> Crie uma agora!</LinkAccount></TextAccount> 
+            <ContentAccount onPress={() => navigation.replace("criar conta")} >
+                <TextAccount>Não tem conta ? <LinkAccount> Crie uma agora!</LinkAccount></TextAccount>
             </ContentAccount>
         </Container>
     )

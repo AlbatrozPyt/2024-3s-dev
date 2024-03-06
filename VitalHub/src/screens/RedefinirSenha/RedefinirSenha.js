@@ -5,10 +5,10 @@ import { Input } from "../../components/Input/Style"
 import { Logo } from "../../components/Logo/Style"
 import { ButtonTitle, SimpleText, Title } from "../../components/Title/Style"
 
-export const RedefinirSenha = () => {
+export const RedefinirSenha = ({navigation}) => {
     return (
         <Container>
-            <ContainerButtonIcon>
+            <ContainerButtonIcon onPress={() => navigation.replace("login")} >
                 <ButtonIcon source={require("../../../assets/close.png")}/>
             </ContainerButtonIcon>
 
@@ -21,7 +21,7 @@ export const RedefinirSenha = () => {
             <Input placeholder="Nova Senha" />
             <Input placeholder="Confirmar nova senha" />
 
-            <Button>
+            <Button onPress={() => navigation.replace("login")} >
                 <ButtonTitle>confirmar nova senha</ButtonTitle>
             </Button>
         </Container>

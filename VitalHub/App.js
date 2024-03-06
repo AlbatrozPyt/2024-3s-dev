@@ -63,6 +63,12 @@ export default function App() {
         <Stack.Screen name="InserirProntuario" component={ProntuarioMedico} />
 
         <Stack.Screen name="ModalVerProntuario" component={ModalProntuario}/>
+
+        <Stack.Screen name="RecuperarSenha" component={RecuperarSenha}/>
+
+        <Stack.Screen name="VerificarEmail" component={VerificarEmail} />
+
+        <Stack.Screen name="RedefinirSenha" component={RedefinirSenha} />
       </Stack.Navigator>
     </NavigationContainer>
   );

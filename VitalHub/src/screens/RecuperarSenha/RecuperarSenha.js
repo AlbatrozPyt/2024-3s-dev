@@ -6,10 +6,10 @@ import { ButtonTitle, SimpleText, Title } from "../../components/Title/Style"
 import { Input } from "../../components/Input/Style"
 import { Button } from "../../components/Button/Style"
 
-export const RecuperarSenha = () => {
+export const RecuperarSenha = ({navigation}) => {
     return (
         <Container>
-            <ContainerButtonIcon>
+            <ContainerButtonIcon onPress={() => navigation.replace("login")}>
                 <ButtonIcon source={require("../../../assets/back-arrow.png")} />
             </ContainerButtonIcon>
 
@@ -23,7 +23,7 @@ export const RecuperarSenha = () => {
 
             <Input placeholder={"Usuário ou E-mail"}/>
 
-            <Button>
+            <Button onPress={() => navigation.replace("VerificarEmail")}>
                 <ButtonTitle>Continuar</ButtonTitle>
             </Button>
 

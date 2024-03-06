@@ -46,8 +46,14 @@ export const TitleHeader = styled.Text`
     color: #FBFBFB;
 `
 
-// Notificacao
-export const Notification = styled.Image `
+// Button Notificacao
+export const ButtonNotfication = styled.TouchableOpacity`
     width: 25px;
     height: 25px;
+`
+
+// Notificacao
+export const Notification = styled.Image `
+    width: 100%;
+    height: 100%;
 `

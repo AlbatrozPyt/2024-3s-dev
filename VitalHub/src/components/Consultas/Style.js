@@ -51,8 +51,9 @@ export const ContainerConsultas = styled.ScrollView`
   margin-top: 20px;
 `;
 
+
 // Card da consulta
-export const CardConsulta = styled.View.attrs({
+export const CardConsulta = styled.TouchableOpacity.attrs({
   shadowColor: '#000',
   shadowOffset: { width: 0, height: 2 },
   shadowOpacity: 0.5,
@@ -62,15 +63,17 @@ export const CardConsulta = styled.View.attrs({
     width: 100%;
     height: 102px;
     border-radius: 5px;
-    background-color: white;    
+    background-color: #ffffff;    
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-evenly;
     margin-top: 12px;
     margin-bottom: 5px;
     padding: 5px;
 `;
+
+  
 
 // Imagem do usuario no card
 export const ImageConsulta = styled.Image`

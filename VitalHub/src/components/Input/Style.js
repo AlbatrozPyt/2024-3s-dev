@@ -22,6 +22,7 @@ export const InputLarge = styled(Input)`
 // Caixa do input de codigo
 export const BoxCodeInput = styled.View`
     margin-top: 20px;
+    margin-bottom: 30px;
     width: 90%;
     display: flex;
     flex-direction: row;

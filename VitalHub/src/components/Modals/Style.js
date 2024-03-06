@@ -24,8 +24,8 @@ export const BoxModalCancelar = styled.View`
 
 // Modal - Ver Prontuario
 export const BoxModalProntuario = styled(BoxModalCancelar)`
+    /* justify-content: space-evenly; */
     height: 436px;
-    justify-content: space-evenly;
 `
 export const TextModalProntuario = styled(CardSubTitle)`
     margin-top: 5px;
@@ -35,7 +35,7 @@ export const ImagePaciente = styled.Image`
     width: 90%;
     height: 181px;
     border-radius: 10px;
-    margin-top: 30px;
+    margin-top: 20px;
 `
 
 // Agendar consulta
@@ -65,5 +65,8 @@ export const DadosAgedamento = styled.View`
 
 //Modal de loacalizacao da consuta
 export const BoxLocalizacao = styled(BoxModalAgendar)`
-    height: 316px;
+    position: absolute;
+    bottom: 0;
+    z-index: 12;
+    height: 349px;
 `

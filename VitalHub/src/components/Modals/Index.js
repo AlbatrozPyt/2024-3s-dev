@@ -13,18 +13,18 @@ import {
   TextAgendar,
   TextModalProntuario,
 } from "./Style";
-import { LinkAccount } from "../ContextAccout/Style";
+import { ContentAccount, LinkAccount } from "../ContextAccout/Style";
 import { Container, ContainerCheck, ContainerInput, ContainerInputProntuario, ContainerMultiInput, ContainerTopicoAgendamento } from "../Container/Style";
 import { Text, TextInput, TouchableOpacity } from "react-native";
-import { BoxConsultasText } from "../Consultas/Style";
+import { BoxConsultasText, CardButton } from "../Consultas/Style";
 import { BoxTitleHeader, SubTitleHeader } from "../Header/Style";
 import { useState } from "react";
 import { ButtonCancel } from "../Button/Index";
 
 // Modal de cancelamento
-export const ModalCancelar = ({ setModal }) => {
+export const ModalCancelar = ({ navigation }) => {
   return (
-    <ModalBackground showModal={setModal}>
+    <ModalBackground>
       <BoxModalCancelar>
         <Title>Cancelar consulta</Title>
 
@@ -37,14 +37,14 @@ export const ModalCancelar = ({ setModal }) => {
           <ButtonTitle>confirmar</ButtonTitle>
         </Button>
 
-        <ButtonCancel setModal={setModal} />
+        <ButtonCancel screen={`MedicoConsultas`} navigation={navigation} />
       </BoxModalCancelar>
     </ModalBackground>
   );
 };
 
 // Modal de inserir prontuario
-export const ModalProntuario = ({ name="user", age="20 anos", email="user@email.com", navigation }) => {
+export const ModalProntuario = ({ name = "user", age = "20 anos", email = "user@email.com", navigation }) => {
   return (
     <ModalBackground>
       <BoxModalProntuario>
@@ -64,7 +64,7 @@ export const ModalProntuario = ({ name="user", age="20 anos", email="user@email.
           <ButtonTitle>inserir prontuário</ButtonTitle>
         </Button>
 
-        <ButtonCancel navigation={navigation} screen={'MedicoConsultas'}/>
+        <ButtonCancel navigation={navigation} screen={'MedicoConsultas'} />
       </BoxModalProntuario>
     </ModalBackground>
   );
@@ -109,12 +109,22 @@ export const ModalAgendarConsulta = ({ setModal }) => {
 export const ModalConsulta = () => {
   return (
     <ModalBackground>
-      <BoxModalProntuario>
-        <ImagePaciente source={require("../../assets/ClaudioLarge.png")} />
+      <BoxModalProntuario style={{ justifyContent: 'space-evenly' }}>
+        <CardButton>
+          <ImagePaciente source={require("../../assets/ClaudioLarge.png")} />
 
-        <Title>Dr. Claudio</Title>
+          <Title>Dr. Claudio</Title>
 
-        <TextModalProntuario>Cliníco geral  CRM-15286</TextModalProntuario>
+          <TextModalProntuario>Cliníco geral  CRM-15286</TextModalProntuario>
+
+          <Button>
+            <ButtonTitle>Ver local da consulta</ButtonTitle>
+          </Button>
+
+          <ContentAccount>
+            <LinkAccount>cancelar</LinkAccount>
+          </ContentAccount>
+        </CardButton>
       </BoxModalProntuario>
     </ModalBackground>
   );
@@ -181,16 +191,16 @@ export const ModalLocalizacao = () => {
       </ContainerInputProntuario>
 
       <ContainerMultiInput>
-          <ContainerInput style={{width: "fit-content"}}>
-            <Label>Número</Label>
-            <InputSmallDisabled value="578" editable={false} />
-          </ContainerInput>
+        <ContainerInput style={{ width: "fit-content" }}>
+          <Label>Número</Label>
+          <InputSmallDisabled value="578" editable={false} />
+        </ContainerInput>
 
-          <ContainerInput style={{width: "fit-content"}}>
-            <Label>Bairro</Label>
-            <InputSmallDisabled value="Moema-SP" editable={false} />
-          </ContainerInput>
-        </ContainerMultiInput>
+        <ContainerInput style={{ width: "fit-content" }}>
+          <Label>Bairro</Label>
+          <InputSmallDisabled value="Moema-SP" editable={false} />
+        </ContainerInput>
+      </ContainerMultiInput>
     </BoxLocalizacao>
   )
 }
