@@ -1,27 +1,29 @@
 import { Button } from "../Button/Style"
 import { CalendarComponent } from "../CalendarComponent/Index"
 import { Container, ContainerInputProntuario } from "../Container/Style"
-import { LinkAccount } from "../ContextAccout/Style"
+import { ContentAccount, LinkAccount } from "../ContextAccout/Style"
 import InputSelect from "../PickerSelect/Index"
 import { ButtonTitle, Label, Title } from "../Title/Style"
 
-export const SelecionarData = () => {
+export const SelecionarData = ({ navigation }) => {
   return (
     <Container>
       <Title>Selecionar Data</Title>
 
-      <CalendarComponent/>
+      <CalendarComponent />
 
-      <ContainerInputProntuario style={{width: `80%`,}}>
+      <ContainerInputProntuario style={{ width: `80%`, }}>
         <Label>Selecione um horário disponível</Label>
-        <InputSelect/>
+        <InputSelect />
       </ContainerInputProntuario>
 
-      <Button>
+      <Button onPress={() => navigation.navigate('Agendamento')}>
         <ButtonTitle>confirmar</ButtonTitle>
       </Button>
 
-      <LinkAccount>cancelar</LinkAccount>
+      <ContentAccount onPress={() => navigation.replace('Main')}>
+        <LinkAccount>cancelar</LinkAccount>
+      </ContentAccount>
     </Container>
   )
 }

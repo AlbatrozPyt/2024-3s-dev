@@ -2,12 +2,12 @@ import { Button } from "../../components/Button/Style"
 import { CardClinica, HorarioAtendimento } from "../../components/Cards/Style"
 import { CardConsulta, CardTitle, ImageConsulta } from "../../components/Consultas/Style"
 import { BoxInverse, Container, ContainerInternoScroll, ContainerSelecionarClinica } from "../../components/Container/Style"
-import { LinkAccount } from "../../components/ContextAccout/Style"
+import { ContentAccount, LinkAccount } from "../../components/ContextAccout/Style"
 import { BoxTitleHeader, SubTitleHeader } from "../../components/Header/Style"
 import { ButtonTitle, TextNote, Title } from "../../components/Title/Style"
 import { AntDesign } from '@expo/vector-icons';
 
-export const SelecionarMedico = () => {
+export const SelecionarMedico = ({navigation}) => {
     return (
         <Container>
 
@@ -77,10 +77,13 @@ export const SelecionarMedico = () => {
                 </ContainerInternoScroll>
             </ContainerSelecionarClinica>
 
-            <Button>
+            <Button onPress={() => navigation.navigate('SelecionarData')}>
                 <ButtonTitle>continuar</ButtonTitle>
             </Button>
-            <LinkAccount>cancelar</LinkAccount>
+
+            <ContentAccount onPress={() => navigation.replace('Main')}>
+                <LinkAccount>cancelar</LinkAccount>
+            </ContentAccount>
         </Container>
     )
 }

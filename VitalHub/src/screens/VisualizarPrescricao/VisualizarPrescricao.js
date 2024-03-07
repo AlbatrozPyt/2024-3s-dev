@@ -1,14 +1,14 @@
 import { ButtonEnviarImagem } from "../../components/Button/Style"
 import { ModalButton, TextCancel } from "../../components/Consultas/Style"
 import { Container, ContainerInputProntuario, ContainerMultiInput, ContainerScroll } from "../../components/Container/Style"
-import { LinkAccount } from "../../components/ContextAccout/Style"
+import { ContentAccount, LinkAccount } from "../../components/ContextAccout/Style"
 import { ImageLarge } from "../../components/Image/Style"
 import { InputDisabled, InputLargeDisabled } from "../../components/Input/Style"
 import { TextModalProntuario } from "../../components/Modals/Style"
 import { ButtonTitle, Label, Title } from "../../components/Title/Style"
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-export const VisualizarPrescricao = () => {
+export const VisualizarPrescricao = ({navigation}) => {
     return (
         <ContainerScroll>
             <Container>
@@ -58,14 +58,14 @@ export const VisualizarPrescricao = () => {
                 <ContainerInputProntuario>
                     <Label>Prescrição médica</Label>
                     <InputLargeDisabled
-                        placeholder="Nenhuma foto informada"
+                        placeholder=" [ ! ] Nenhuma foto informada"
                         editable={false}
                     />
                 </ContainerInputProntuario>
 
                 <ContainerMultiInput style={{ borderBottomWidth: 2, borderColor: `#8C8A97` }}>
                     <ButtonEnviarImagem>
-                        <ButtonTitle> <MaterialCommunityIcons name="camera-plus-outline" size={24} color="white" /> entrar</ButtonTitle>
+                        <ButtonTitle> <MaterialCommunityIcons name="camera-plus-outline" size={24} color="white" /> enviar</ButtonTitle>
                     </ButtonEnviarImagem>
 
                     <TextCancel>cancelar</TextCancel>
@@ -76,7 +76,9 @@ export const VisualizarPrescricao = () => {
                     placeholder={"Resultado do exame de sangue : tudo normal"}
                 />
 
-                <LinkAccount>voltar</LinkAccount>
+                <ContentAccount onPress={() => navigation.replace(`Main`)}>
+                    <LinkAccount>voltar</LinkAccount>
+                </ContentAccount>
             </Container>
         </ContainerScroll>
     )

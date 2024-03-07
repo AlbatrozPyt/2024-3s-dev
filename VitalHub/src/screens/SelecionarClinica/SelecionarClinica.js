@@ -4,22 +4,25 @@ import { BoxInverse, Container, ContainerInternoScroll, ContainerScroll, Contain
 import { BoxTitleHeader, SubTitleHeader } from "../../components/Header/Style"
 import { ButtonTitle, TextNote, Title } from "../../components/Title/Style";
 import { Button } from "../../components/Button/Style";
-import { LinkAccount } from "../../components/ContextAccout/Style"
+import { ContentAccount, LinkAccount } from "../../components/ContextAccout/Style"
 import { CardClinicas } from "../../components/CardClinica/Index";
 
 
-export const SelecionarClinica = () => {
+export const SelecionarClinica = ({navigation}) => {
     return (
 
 
         <Container>
 
-            <CardClinicas/>            
+            <CardClinicas />
 
-            <Button>
+            <Button onPress={() => navigation.navigate('SelecionarMedico')}>
                 <ButtonTitle>continuar</ButtonTitle>
             </Button>
-            <LinkAccount>cancelar</LinkAccount>
+
+            <ContentAccount onPress={() => navigation.replace('Main')}>
+                <LinkAccount>cancelar</LinkAccount>
+            </ContentAccount>
         </Container>
 
 

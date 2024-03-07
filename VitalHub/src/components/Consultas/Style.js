@@ -53,7 +53,7 @@ export const ContainerConsultas = styled.ScrollView`
 
 
 // Card da consulta
-export const CardConsulta = styled.TouchableOpacity.attrs({
+export const CardConsulta = styled.View.attrs({
   shadowColor: '#000',
   shadowOffset: { width: 0, height: 2 },
   shadowOpacity: 0.5,
@@ -73,7 +73,15 @@ export const CardConsulta = styled.TouchableOpacity.attrs({
     padding: 5px;
 `;
 
-  
+
+export const ButtonCardConsulta = styled.TouchableOpacity` 
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+`
+
 
 // Imagem do usuario no card
 export const ImageConsulta = styled.Image`

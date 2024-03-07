@@ -28,7 +28,7 @@ import CalendarComponent, { SelecionarData } from "./src/components/SelecionarDa
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { FontAwesome6 } from "@expo/vector-icons";
-import { ModalProntuario } from "./src/components/Modals/Index.js";
+import { ModalAgendamento, ModalProntuario } from "./src/components/Modals/Index.js";
 import { Main } from "./src/screens/Main/Main.js";
 
 export default function App() {
@@ -69,6 +69,16 @@ export default function App() {
         <Stack.Screen name="VerificarEmail" component={VerificarEmail} />
 
         <Stack.Screen name="RedefinirSenha" component={RedefinirSenha} />
+
+        <Stack.Screen name="VisualizarPrescricao" component={VisualizarPrescricao} />
+
+        <Stack.Screen name="SelecionarClinica" component={SelecionarClinica} />
+
+        <Stack.Screen name="SelecionarMedico" component={SelecionarMedico} />
+
+        <Stack.Screen name="SelecionarData" component={SelecionarData} />\
+
+        <Stack.Screen name="Agendamento" component={ModalAgendamento} />
       </Stack.Navigator>
     </NavigationContainer>
   );

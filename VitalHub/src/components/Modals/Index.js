@@ -37,7 +37,7 @@ export const ModalCancelar = ({ navigation }) => {
           <ButtonTitle>confirmar</ButtonTitle>
         </Button>
 
-        <ButtonCancel screen={`MedicoConsultas`} navigation={navigation} />
+        <ButtonCancel screen={`Main`} navigation={navigation} />
       </BoxModalCancelar>
     </ModalBackground>
   );
@@ -64,14 +64,14 @@ export const ModalProntuario = ({ name = "user", age = "20 anos", email = "user@
           <ButtonTitle>inserir prontuário</ButtonTitle>
         </Button>
 
-        <ButtonCancel navigation={navigation} screen={'MedicoConsultas'} />
+        <ButtonCancel navigation={navigation} screen={'Main'} />
       </BoxModalProntuario>
     </ModalBackground>
   );
 };
 
 // Modal de agendamento da consulta
-export const ModalAgendarConsulta = ({ setModal }) => {
+export const ModalAgendarConsulta = ({ navigation }) => {
   return (
     <ModalBackground>
       <BoxModalAgendar>
@@ -95,11 +95,11 @@ export const ModalAgendarConsulta = ({ setModal }) => {
           <Input placeholder="Informe a localização" />
         </ContainerInputProntuario>
 
-        <Button>
+        <Button onPress={() => navigation.navigate("SelecionarClinica")}>
           <ButtonTitle>continuar</ButtonTitle>
         </Button>
 
-        <ButtonCancel setModal={setModal} />
+        <ButtonCancel navigation={navigation}  screen={`Main`}/>
       </BoxModalAgendar>
     </ModalBackground>
   );
