@@ -106,7 +106,7 @@ export const ModalAgendarConsulta = ({ navigation }) => {
 };
 
 // Modal de ver local da consulta
-export const ModalConsulta = () => {
+export const ModalConsulta = ({navigation}) => {
   return (
     <ModalBackground>
       <BoxModalProntuario style={{ justifyContent: 'space-evenly' }}>
@@ -131,7 +131,7 @@ export const ModalConsulta = () => {
 };
 
 // Modal de visualizacao do agendamento
-export const ModalAgendamento = () => {
+export const ModalAgendamento = ({navigation}) => {
   return (
     <ModalBackground>
       <BoxModalAgendamento>
@@ -166,11 +166,11 @@ export const ModalAgendamento = () => {
         </ContainerTopicoAgendamento>
 
 
-        <Button>
+        <Button onPress={() => navigation.replace(`Main`)}>
           <ButtonTitle>confirmar</ButtonTitle>
         </Button>
 
-        <ButtonCancel />
+        <ButtonCancel navigation={navigation} screen={'SelecionarData'}/>
       </BoxModalAgendamento>
 
     </ModalBackground>

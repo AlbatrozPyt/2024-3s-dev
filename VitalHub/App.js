@@ -76,7 +76,7 @@ export default function App() {
 
         <Stack.Screen name="SelecionarMedico" component={SelecionarMedico} />
 
-        <Stack.Screen name="SelecionarData" component={SelecionarData} />\
+        <Stack.Screen name="SelecionarData" component={SelecionarData} />
 
         <Stack.Screen name="Agendamento" component={ModalAgendamento} />
       </Stack.Navigator>

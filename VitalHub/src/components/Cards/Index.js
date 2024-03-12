@@ -5,7 +5,6 @@ import { ModalCancelar, ModalConsulta, ModalLocalizacao, ModalProntuario } from 
 
 import { AntDesign } from "@expo/vector-icons";
 import { useState } from "react";
-import { ProntuarioMedico } from "../../screens/ProntuarioMedico/ProntuarioMedico";
 
 export const Cards = ({ situacao, navigation, setPaciente }) => {
     const lista = [{
@@ -39,7 +38,7 @@ export const Cards = ({ situacao, navigation, setPaciente }) => {
     // mostrar ou nao o local da consulta
     const [showModalLocal, setShowModalLocal] = useState(false);
     const [showModalCancel, setShowModalCancel] = useState(false);
-    const [showModalVerProntuario, setShowModalVerProntuario] = useState(false);
+    const [showModalVerLocalizacao, setShowModalVerLocalizacao] = useState(false);
     const [userRole, setUserRole] = useState('medico')
 
     return (
@@ -71,19 +70,19 @@ export const Cards = ({ situacao, navigation, setPaciente }) => {
                     if (obj.situacao === "realizadas" && obj.situacao === situacao) {
                         return (
                             <CardConsulta>
-                                <ButtonCardConsulta onPress={() => setShowModalVerProntuario(true)}>
-                                <ImageConsulta source={require("../../assets/vinicius.png")} />
+                                <ButtonCardConsulta onPress={() => setShowModalVerLocalizacao(true)}>
+                                    <ImageConsulta source={require("../../assets/vinicius.png")} />
 
-                                <BoxConsultasText>
-                                    <CardTitle>{obj.name}</CardTitle>
-                                    <CardSubTitle>{obj.age} · {obj.type}</CardSubTitle>
+                                    <BoxConsultasText>
+                                        <CardTitle>{obj.name}</CardTitle>
+                                        <CardSubTitle>{obj.age} · {obj.type}</CardSubTitle>
 
-                                    <BoxHorario situacao={obj.type} />
+                                        <BoxHorario situacao={obj.type} />
 
-                                </BoxConsultasText>
+                                    </BoxConsultasText>
                                 </ButtonCardConsulta>
 
-                                <ModalButton onPress={() => { setPaciente(obj); setShowModalVerProntuario(true) }}>
+                                <ModalButton onPress={() => { setPaciente(obj); setShowModalVerLocalizacao(true) }}>
                                     <TextVerProntuario>Ver prontuario</TextVerProntuario>
                                 </ModalButton>
                             </CardConsulta>
@@ -96,7 +95,7 @@ export const Cards = ({ situacao, navigation, setPaciente }) => {
                             // consultas agendadas
 
                             <CardConsulta>
-                                <ButtonCardConsulta onPress={() => setShowModalVerProntuario(true)}>
+                                <ButtonCardConsulta onPress={() => setShowModalVerLocalizacao(true)}>
                                     <ImageConsulta source={require("../../assets/Nicolle.png")} />
 
                                     <BoxConsultasText>
@@ -124,12 +123,8 @@ export const Cards = ({ situacao, navigation, setPaciente }) => {
             }
 
             {
-                showModalVerProntuario === true ? (
-                    userRole === 'paciente' ? (
-                        navigation.navigate("VisualizarPrescricao")
-                    ) : (
-                        <ModalProntuario navigation={navigation} />
-                    )
+                showModalVerLocalizacao === true ? (
+                    <ModalConsulta navigation={navigation} />
                 ) : null
             }
 
