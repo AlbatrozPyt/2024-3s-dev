@@ -16,7 +16,7 @@ import {
 import { ContentAccount, LinkAccount } from "../ContextAccout/Style";
 import { Container, ContainerCheck, ContainerInput, ContainerInputProntuario, ContainerMultiInput, ContainerTopicoAgendamento } from "../Container/Style";
 import { Text, TextInput, TouchableOpacity } from "react-native";
-import { BoxConsultasText, CardButton } from "../Consultas/Style";
+import { BoxConsultasText, ButtonCardConsulta, CardButton } from "../Consultas/Style";
 import { BoxTitleHeader, SubTitleHeader } from "../Header/Style";
 import { useState } from "react";
 import { ButtonCancel } from "../Button/Index";
@@ -99,39 +99,14 @@ export const ModalAgendarConsulta = ({ navigation }) => {
           <ButtonTitle>continuar</ButtonTitle>
         </Button>
 
-        <ButtonCancel navigation={navigation}  screen={`Main`}/>
+        <ButtonCancel navigation={navigation} screen={`Main`} />
       </BoxModalAgendar>
     </ModalBackground>
   );
 };
 
-// Modal de ver local da consulta
-export const ModalConsulta = ({navigation}) => {
-  return (
-    <ModalBackground>
-      <BoxModalProntuario style={{ justifyContent: 'space-evenly' }}>
-        <CardButton>
-          <ImagePaciente source={require("../../assets/ClaudioLarge.png")} />
-
-          <Title>Dr. Claudio</Title>
-
-          <TextModalProntuario>Cliníco geral  CRM-15286</TextModalProntuario>
-
-          <Button>
-            <ButtonTitle>Ver local da consulta</ButtonTitle>
-          </Button>
-
-          <ContentAccount>
-            <LinkAccount>cancelar</LinkAccount>
-          </ContentAccount>
-        </CardButton>
-      </BoxModalProntuario>
-    </ModalBackground>
-  );
-};
-
 // Modal de visualizacao do agendamento
-export const ModalAgendamento = ({navigation}) => {
+export const ModalAgendamento = ({ navigation }) => {
   return (
     <ModalBackground>
       <BoxModalAgendamento>
@@ -170,7 +145,7 @@ export const ModalAgendamento = ({navigation}) => {
           <ButtonTitle>confirmar</ButtonTitle>
         </Button>
 
-        <ButtonCancel navigation={navigation} screen={'SelecionarData'}/>
+        <ButtonCancel navigation={navigation} screen={'SelecionarData'} />
       </BoxModalAgendamento>
 
     </ModalBackground>
@@ -202,5 +177,28 @@ export const ModalLocalizacao = () => {
         </ContainerInput>
       </ContainerMultiInput>
     </BoxLocalizacao>
+  )
+}
+
+// Modal Ver local da consulta
+export const LocalConsulta = ({navigation}) => {
+  return (
+    <ModalBackground>
+      <BoxModalProntuario>
+          <ImagePaciente source={require("../../assets/ClaudioLarge.png")} />
+
+          <Title>Dr. Claudio</Title>
+
+          <TextModalProntuario>Cliníco geral  CRM-15286</TextModalProntuario>
+
+          <Button onPress={() => navigation.replace(`Mapa`)}>
+            <ButtonTitle>Ver local da consulta</ButtonTitle>
+          </Button>
+
+          <ContentAccount onPress={() => navigation.replace('Main')}>
+            <LinkAccount>cancelar</LinkAccount>
+          </ContentAccount>
+      </BoxModalProntuario>
+    </ModalBackground>
   )
 }

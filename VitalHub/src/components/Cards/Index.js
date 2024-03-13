@@ -1,7 +1,21 @@
 import { FlatList, Text, Touchable, TouchableOpacity, View } from "react-native";
 import { BoxHorario } from "../BoxHorario/Index";
-import { BoxConsultasText, ButtonCardConsulta, CardConsulta, CardSubTitle, CardTitle, ContainerConsultas, ImageConsulta, ModalButton, TextCancel, TextVerProntuario } from "../Consultas/Style"
-import { ModalCancelar, ModalConsulta, ModalLocalizacao, ModalProntuario } from "../Modals/Index"
+import {
+    BoxConsultasText,
+    ButtonCardConsulta,
+    CardConsulta,
+    CardSubTitle,
+    CardTitle,
+    ContainerConsultas,
+    ImageConsulta,
+    ModalButton,
+    TextCancel,
+    TextVerProntuario
+} from "../Consultas/Style"
+import {
+    LocalConsulta,
+    ModalCancelar,
+} from "../Modals/Index"
 
 import { AntDesign } from "@expo/vector-icons";
 import { useState } from "react";
@@ -38,7 +52,6 @@ export const Cards = ({ situacao, navigation, setPaciente }) => {
     // mostrar ou nao o local da consulta
     const [showModalLocal, setShowModalLocal] = useState(false);
     const [showModalCancel, setShowModalCancel] = useState(false);
-    const [showModalVerLocalizacao, setShowModalVerLocalizacao] = useState(false);
     const [userRole, setUserRole] = useState('medico')
 
     return (
@@ -49,8 +62,8 @@ export const Cards = ({ situacao, navigation, setPaciente }) => {
                     // consultas canceladas
                     if (obj.situacao === "canceladas" && obj.situacao === situacao) {
                         return (
-                            <TouchableOpacity onPress={() => setShowModalVerProntuario(true)}>
-                                <CardConsulta onPress={() => setShowModalLocal(true)}>
+                            <CardConsulta>
+                                <ButtonCardConsulta onPress={() => setShowModalLocal(true)}>
                                     <ImageConsulta source={require("../../assets/lucas.jpg")} />
 
                                     <BoxConsultasText>
@@ -60,8 +73,8 @@ export const Cards = ({ situacao, navigation, setPaciente }) => {
                                         <BoxHorario situacao={obj.type} />
 
                                     </BoxConsultasText>
-                                </CardConsulta>
-                            </TouchableOpacity>
+                                </ButtonCardConsulta>
+                            </CardConsulta>
                         )
                     }
 
@@ -70,7 +83,7 @@ export const Cards = ({ situacao, navigation, setPaciente }) => {
                     if (obj.situacao === "realizadas" && obj.situacao === situacao) {
                         return (
                             <CardConsulta>
-                                <ButtonCardConsulta onPress={() => setShowModalVerLocalizacao(true)}>
+                                <ButtonCardConsulta onPress={() => setShowModalLocal(true)}>
                                     <ImageConsulta source={require("../../assets/vinicius.png")} />
 
                                     <BoxConsultasText>
@@ -95,7 +108,7 @@ export const Cards = ({ situacao, navigation, setPaciente }) => {
                             // consultas agendadas
 
                             <CardConsulta>
-                                <ButtonCardConsulta onPress={() => setShowModalVerLocalizacao(true)}>
+                                <ButtonCardConsulta onPress={() => setShowModalLocal(true)}>
                                     <ImageConsulta source={require("../../assets/Nicolle.png")} />
 
                                     <BoxConsultasText>
@@ -114,6 +127,7 @@ export const Cards = ({ situacao, navigation, setPaciente }) => {
                         )
                     }
                 })}
+                
             </ContainerConsultas >
 
             {
@@ -121,13 +135,14 @@ export const Cards = ({ situacao, navigation, setPaciente }) => {
                     <ModalCancelar navigation={navigation} />
                 ) : null
             }
-
+            
             {
-                showModalVerLocalizacao === true ? (
-                    <ModalConsulta navigation={navigation} />
+                showModalLocal === true ? (
+                    <LocalConsulta navigation={navigation}/>
                 ) : null
             }
 
+        
         </>
     )
 }

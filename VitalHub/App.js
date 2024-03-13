@@ -28,8 +28,9 @@ import CalendarComponent, { SelecionarData } from "./src/components/SelecionarDa
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { FontAwesome6 } from "@expo/vector-icons";
-import { ModalAgendamento, ModalProntuario } from "./src/components/Modals/Index.js";
+import { LocalConsulta, ModalAgendamento, ModalProntuario } from "./src/components/Modals/Index.js";
 import { Main } from "./src/screens/Main/Main.js";
+import { Map } from "./src/screens/MapView/Map.js";
 
 export default function App() {
 
@@ -79,6 +80,8 @@ export default function App() {
         <Stack.Screen name="SelecionarData" component={SelecionarData} />
 
         <Stack.Screen name="Agendamento" component={ModalAgendamento} />
+
+        <Stack.Screen name="Mapa" component={Map} />
       </Stack.Navigator>
     </NavigationContainer>
   );
