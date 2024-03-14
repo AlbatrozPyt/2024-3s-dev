@@ -15,6 +15,7 @@ import {
 import {
     LocalConsulta,
     ModalCancelar,
+    ModalProntuario,
 } from "../Modals/Index"
 
 import { AntDesign } from "@expo/vector-icons";
@@ -52,6 +53,7 @@ export const Cards = ({ situacao, navigation, setPaciente }) => {
     // mostrar ou nao o local da consulta
     const [showModalLocal, setShowModalLocal] = useState(false);
     const [showModalCancel, setShowModalCancel] = useState(false);
+    const [showModalVerProntuario, setShowModalVerProntuario] = useState(false);
     const [userRole, setUserRole] = useState('medico')
 
     return (
@@ -95,7 +97,7 @@ export const Cards = ({ situacao, navigation, setPaciente }) => {
                                     </BoxConsultasText>
                                 </ButtonCardConsulta>
 
-                                <ModalButton onPress={() => { setPaciente(obj); setShowModalVerLocalizacao(true) }}>
+                                <ModalButton onPress={() => { setPaciente(obj); navigation.replace(`VisualizarPrescricao`) }}>
                                     <TextVerProntuario>Ver prontuario</TextVerProntuario>
                                 </ModalButton>
                             </CardConsulta>
@@ -141,8 +143,6 @@ export const Cards = ({ situacao, navigation, setPaciente }) => {
                     <LocalConsulta navigation={navigation}/>
                 ) : null
             }
-
-        
         </>
     )
 }

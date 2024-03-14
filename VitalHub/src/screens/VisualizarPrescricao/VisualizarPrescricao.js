@@ -1,3 +1,4 @@
+import { View } from "react-native"
 import { ButtonEnviarImagem } from "../../components/Button/Style"
 import { ModalButton, TextCancel } from "../../components/Consultas/Style"
 import { Container, ContainerInputProntuario, ContainerMultiInput, ContainerScroll } from "../../components/Container/Style"
@@ -8,7 +9,8 @@ import { TextModalProntuario } from "../../components/Modals/Style"
 import { ButtonTitle, Label, Title } from "../../components/Title/Style"
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-export const VisualizarPrescricao = ({navigation}) => {
+
+export const VisualizarPrescricao = ({ navigation }) => {
     return (
         <ContainerScroll>
             <Container>
@@ -55,17 +57,32 @@ export const VisualizarPrescricao = ({navigation}) => {
                     />
                 </ContainerInputProntuario>
 
-                <ContainerInputProntuario>
-                    <Label>Prescrição médica</Label>
-                    <InputLargeDisabled
-                        placeholder=" [ ! ] Nenhuma foto informada"
-                        editable={false}
-                    />
-                </ContainerInputProntuario>
 
+                {/* Foto */}
+                <Label>Exames médicos</Label>
+                <View
+                    style={{
+                        flex: 1,
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        margin: 20,
+                        backgroundColor: `#F5F3F3`,
+                        width: `90%`,
+                        height: 111
+                    }}
+                >
+                    
+
+
+                </View>
+
+
+                {/* Botao de enviar imagem */}
                 <ContainerMultiInput style={{ borderBottomWidth: 2, borderColor: `#8C8A97` }}>
-                    <ButtonEnviarImagem>
-                        <ButtonTitle> <MaterialCommunityIcons name="camera-plus-outline" size={24} color="white" /> enviar</ButtonTitle>
+
+                    <ButtonEnviarImagem onPress={() => navigation.navigate(`Photo`)}>
+                        <ButtonTitle>
+                            <MaterialCommunityIcons name="camera-plus-outline" size={24} color="white" /> enviar</ButtonTitle>
                     </ButtonEnviarImagem>
 
                     <TextCancel>cancelar</TextCancel>

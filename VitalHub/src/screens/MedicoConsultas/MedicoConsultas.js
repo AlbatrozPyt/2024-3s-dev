@@ -1,11 +1,11 @@
-import { StatusBar, Text, View } from "react-native";
+import { StatusBar } from "react-native";
 import { Container } from "../../components/Container/Style";
 import { Situacao } from "../../components/Consultas/Index";
 import { Header } from "../../components/Header/Index";
 import { Cards } from "../../components/Cards/Index";
-import { LocalConsulta, ModalAgendarConsulta } from "../../components/Modals/Index";
 import { Calendar } from "../../components/Calendar/Index"
 import { useState } from "react";
+import { ModalAgendarConsulta } from "../../components/Modals/Index";
 import { ButtonAgendar, ContainerButtonAgendar } from "../../components/ButtonIcons/Style";
 
 export const MedicoConsultas = ({ navigation }) => {
@@ -37,7 +37,7 @@ export const MedicoConsultas = ({ navigation }) => {
         setModalCancel={setModalCancel}
         situacao={situacao}
         navigation={navigation}
-      />  
+      />
 
       {
         userRole === 'paciente' ? (
@@ -49,7 +49,7 @@ export const MedicoConsultas = ({ navigation }) => {
 
       {
         modalAgendar ? (
-          <ModalAgendarConsulta  navigation={navigation} />
+          <ModalAgendarConsulta navigation={navigation} />
         ) : null
       }
 

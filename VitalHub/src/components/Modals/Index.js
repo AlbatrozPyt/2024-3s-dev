@@ -1,6 +1,18 @@
-import { ButtonTitle, Label, SimpleText, TextCheckbox, TextSemiBold, Title } from "../Title/Style";
+import { SubTitleHeader } from "../Header/Style";
+import { ButtonCancel } from "../Button/Index";
+import { ContentAccount, LinkAccount } from "../ContextAccout/Style";
 import { Button, CheckBox } from "../Button/Style";
-import { Input, InputDisabled, InputLargeDisabled, InputSmallDisabled } from "../Input/Style";
+import { Input, InputDisabled, InputSmallDisabled } from "../Input/Style";
+
+import { 
+  ButtonTitle, 
+  Label, 
+  SimpleText, 
+  TextCheckbox, 
+  TextSemiBold, 
+  Title 
+} from "../Title/Style";
+
 import {
   BoxLocalizacao,
   BoxModalAgendamento,
@@ -13,13 +25,15 @@ import {
   TextAgendar,
   TextModalProntuario,
 } from "./Style";
-import { ContentAccount, LinkAccount } from "../ContextAccout/Style";
-import { Container, ContainerCheck, ContainerInput, ContainerInputProntuario, ContainerMultiInput, ContainerTopicoAgendamento } from "../Container/Style";
-import { Text, TextInput, TouchableOpacity } from "react-native";
-import { BoxConsultasText, ButtonCardConsulta, CardButton } from "../Consultas/Style";
-import { BoxTitleHeader, SubTitleHeader } from "../Header/Style";
-import { useState } from "react";
-import { ButtonCancel } from "../Button/Index";
+
+import { 
+  ContainerCheck,
+  ContainerInput, 
+  ContainerInputProntuario, 
+  ContainerMultiInput, 
+  ContainerTopicoAgendamento 
+} from "../Container/Style";
+
 
 // Modal de cancelamento
 export const ModalCancelar = ({ navigation }) => {
@@ -152,7 +166,7 @@ export const ModalAgendamento = ({ navigation }) => {
   )
 }
 
-export const ModalLocalizacao = () => {
+export const ModalLocalizacao = ({navigation}) => {
   return (
     <BoxLocalizacao>
       <Title>Clínica Natureh</Title>
@@ -160,7 +174,7 @@ export const ModalLocalizacao = () => {
         São Paulo, SP
       </TextModalProntuario>
 
-      <ContainerInputProntuario>
+      <ContainerInputProntuario style={{marginTop:0}}>
         <Label>Endereço</Label>
         <InputDisabled editable={false} placeholder="Rua Vicenso Silva, 987" />
       </ContainerInputProntuario>
@@ -176,6 +190,12 @@ export const ModalLocalizacao = () => {
           <InputSmallDisabled value="Moema-SP" editable={false} />
         </ContainerInput>
       </ContainerMultiInput>
+
+      <ContentAccount onPress={() => navigation.replace(`Main`)}>
+        <LinkAccount>
+          voltar
+        </LinkAccount>
+      </ContentAccount>
     </BoxLocalizacao>
   )
 }

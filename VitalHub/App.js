@@ -31,6 +31,7 @@ import { FontAwesome6 } from "@expo/vector-icons";
 import { LocalConsulta, ModalAgendamento, ModalProntuario } from "./src/components/Modals/Index.js";
 import { Main } from "./src/screens/Main/Main.js";
 import { Map } from "./src/screens/MapView/Map.js";
+import { CameraTela } from "./src/components/Photo/Photo.js";
 
 export default function App() {
 
@@ -82,6 +83,8 @@ export default function App() {
         <Stack.Screen name="Agendamento" component={ModalAgendamento} />
 
         <Stack.Screen name="Mapa" component={Map} />
+        
+        <Stack.Screen name="Photo" component={CameraTela} />
       </Stack.Navigator>
     </NavigationContainer>
   );
