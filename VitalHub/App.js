@@ -64,15 +64,23 @@ export default function App() {
 
         <Stack.Screen name="InserirProntuario" component={ProntuarioMedico} />
 
-        <Stack.Screen name="ModalVerProntuario" component={ModalProntuario}/>
+        <Stack.Screen name="ModalVerProntuario" component={ModalProntuario} />
 
-        <Stack.Screen name="RecuperarSenha" component={RecuperarSenha}/>
+        <Stack.Screen name="RecuperarSenha" component={RecuperarSenha} />
 
         <Stack.Screen name="VerificarEmail" component={VerificarEmail} />
 
         <Stack.Screen name="RedefinirSenha" component={RedefinirSenha} />
 
-        <Stack.Screen name="VisualizarPrescricao" component={VisualizarPrescricao} />
+        <Stack.Screen
+          name="VisualizarPrescricao"
+          component={VisualizarPrescricao}
+          options={{
+            title: "",
+            animation: "flip",
+            headerTransparent: true
+          }}
+        />
 
         <Stack.Screen name="SelecionarClinica" component={SelecionarClinica} />
 
@@ -83,7 +91,7 @@ export default function App() {
         <Stack.Screen name="Agendamento" component={ModalAgendamento} />
 
         <Stack.Screen name="Mapa" component={Map} />
-        
+
         <Stack.Screen name="Photo" component={CameraTela} />
       </Stack.Navigator>
     </NavigationContainer>
