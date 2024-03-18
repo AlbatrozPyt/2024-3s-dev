@@ -4,6 +4,8 @@ import { ContentAccount, LinkAccount } from "../ContextAccout/Style";
 import { Button, CheckBox } from "../Button/Style";
 import { Input, InputDisabled, InputSmallDisabled } from "../Input/Style";
 
+import * as Notifications from 'expo-notifications'
+
 import { 
   ButtonTitle, 
   Label, 
@@ -33,10 +35,40 @@ import {
   ContainerMultiInput, 
   ContainerTopicoAgendamento 
 } from "../Container/Style";
+import { getPermissionsAsync } from "expo-media-library";
 
+
+Notifications.requestPermissionsAsync();
+
+Notifications.setNotificationHandler({
+ handleNotification: async () => ({
+   shouldPlaySound: true,
+   shouldShowAlert: true,
+   shouldSetBadge: true,
+ })
+})
 
 // Modal de cancelamento
 export const ModalCancelar = ({ navigation }) => {
+
+  const handleNotification = async () => {
+    const { status } = await Notifications.getPermissionsAsync();
+
+    if (status !== `granted`)
+    {
+      alert(`Notificacoes desativadas`)
+      return
+    }
+
+    await Notifications.scheduleNotificationAsync({
+      content: {
+        title: `Consulta cancelada`,
+        body: `A sua consulta foi cancelada com sucesso.`,
+      },
+      trigger: null
+    })
+  }
+
   return (
     <ModalBackground>
       <BoxModalCancelar>
@@ -47,7 +79,7 @@ export const ModalCancelar = ({ navigation }) => {
           horário, deseja mesmo cancelar essa consulta?
         </SimpleText>
 
-        <Button>
+        <Button onPress={() => {handleNotification(), navigation.replace(`Main`)}}>
           <ButtonTitle>confirmar</ButtonTitle>
         </Button>
 
